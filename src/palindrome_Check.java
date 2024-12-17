@@ -27,5 +27,6 @@ public class palindrome_Check {
         System.out.println(obj.check_for_palindrome(example_palindrome));
         System.out.println(obj.check_for_palindrome("NotAPalindrome"));
 
+
     }
 }
