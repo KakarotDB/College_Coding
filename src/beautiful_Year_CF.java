@@ -8,7 +8,5 @@ public class beautiful_Year_CF {
         while (Integer.toString(++t).chars().distinct().count()<4)
         {}
         System.out.println(t);
-        
-
     }
 }
