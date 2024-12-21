@@ -10,10 +10,7 @@ public class prime_Factorization {
             if (n%i==0)
                 number_of_factors++;
         }
-        if (number_of_factors<=1)
-            return true;
-        else
-            return false;
+        return number_of_factors <= 1;
     }
     public void Prime_factors(int n)
     {
