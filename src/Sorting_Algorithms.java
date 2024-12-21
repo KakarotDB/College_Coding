@@ -2,6 +2,19 @@ import java.util.Arrays;
 
 public class Sorting_Algorithms
 {
+    public void BubbleSort(int[] array)
+    {
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array.length - i - 1; j++) {
+                if (array[j]>array[j+1])
+                {
+                    int temp = array[j];
+                    array[j]=array[j+1];
+                    array[j+1]=temp;
+                }
+            }
+        }
+    }
     public void selection_Sort(int array[])
     {
         for (int i = 0; i < array.length-1; i++) {
@@ -35,18 +48,27 @@ public class Sorting_Algorithms
         }
         System.out.println(Arrays.toString(array));
     }
-    public void BubbleSort(int[] array)
+    public void counting_Sort(int array[])
     {
-        for (int i = 0; i < array.length; i++) {
-            for (int j = 0; j < array.length - i - 1; j++) {
-                if (array[j]>array[j+1])
-                {
-                    int temp = array[j];
-                    array[j]=array[j+1];
-                    array[j+1]=temp;
-                }
+        int min = Arrays.stream(array).min().orElse(0);
+        int max = Arrays.stream(array).max().orElse(Integer.MAX_VALUE);
+        int countArray [] = new int[max-min+1];
+        for (int value : array)
+        {
+            countArray[value-min]++;
+        }
+        int arrayIndex = 0;
+        for (int i = 0; i < max-min+1; i++) {
+            while (countArray[i]>0)
+            {
+                array[arrayIndex]= i+min;
+                countArray[i]--;
+                arrayIndex++;
             }
+
+            
         }
     }
+
 
 }
