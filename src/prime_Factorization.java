@@ -1,51 +1,40 @@
-import java.util.Arrays;
+import java.util.*;
 
 public class prime_Factorization {
-    public boolean isPrime(int n)
-    {
-        if (n==1)
-            return false;
-        int number_of_factors = 0;
-        for (int i = 1; i < n; i++) {
-            if (n%i==0)
-                number_of_factors++;
-        }
-        return number_of_factors <= 1;
-    }
-    public void Prime_factors(int n)
-    {
-        if (isPrime(n)) {
-            System.out.println("The given number is a prime number");
-        }
-        else if(n==1)
-        {
-            System.out.println("1 is not a prime number, and has only 1 factor");
-        }
-        else
-        {
-            String prime_factors = "";
+    public Map<Integer, Integer> getPrimeFactors(int n) {
+        Map<Integer, Integer> primeFactors = new HashMap<>();
 
-            while (n % 2 == 0) {
-                prime_factors += Integer.toString(2);
-                n /= 2;
-            }
-            for (int i = 3; i <= Math.sqrt(n); i += 2) {
-                while (n % i == 0) {
-                    prime_factors += Integer.toString(i);
-                    n /= i;
-                }
-
-            }
-            if (n>2)
-                prime_factors+=n;
-            System.out.println(Arrays.toString(prime_factors.toCharArray()));
+        if (n <= 1) {
+            // Return an empty map for n <= 1
+            return primeFactors;
         }
+
+        // Factor out 2 and count its power
+        while (n % 2 == 0) {
+            primeFactors.put(2, primeFactors.getOrDefault(2, 0) + 1);
+            n /= 2;
+        }
+
+        // Factor out odd numbers
+        for (int i = 3; i <= Math.sqrt(n); i += 2) {
+            while (n % i == 0) {
+                primeFactors.put(i, primeFactors.getOrDefault(i, 0) + 1);
+                n /= i;
+            }
+        }
+
+        // If n is a prime number greater than 2
+        if (n > 2) {
+            primeFactors.put(n, primeFactors.getOrDefault(n, 0) + 1);
+        }
+
+        return primeFactors;
     }
 
     public static void main(String[] args) {
         prime_Factorization obj = new prime_Factorization();
-        obj.Prime_factors(1);
-        obj.Prime_factors(37);
-        obj.Prime_factors(315);
+        System.out.println(obj.getPrimeFactors(1));
+        System.out.println(obj.getPrimeFactors(37));
+        System.out.println(obj.getPrimeFactors(315));
     }
 }
