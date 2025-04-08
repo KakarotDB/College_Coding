@@ -1,7 +1,7 @@
 public class factorUsingRoot {
     public static void main(String[] args) {
         factorUsingRoot obj = new factorUsingRoot();
-        obj.Factor(36);
+        obj.Factor(2021);
     }
     public void Factor(int n )
     {
