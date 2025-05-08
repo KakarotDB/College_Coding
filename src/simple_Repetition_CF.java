@@ -10,13 +10,11 @@ public class simple_Repetition_CF {
             StringBuilder x = new StringBuilder(sc.next());
 //            String x = sc.next();
             int k = sc.nextInt();
-            StringBuilder ystr = new StringBuilder("");
-            for (int i = 0; i < k; i++) {
-                ystr.append(x);
-            }
+            StringBuilder Ystr = new StringBuilder();
+            String ystr = Ystr.toString().repeat(k);
 
 //            String x_in = x.repeat(k);
-            BigInteger y = new BigInteger(ystr.toString());
+            BigInteger y = new BigInteger(ystr);
 //            System.out.println("x_out = " + x_out);
             if(y.isProbablePrime(10))
                 System.out.println("YEs");
@@ -25,17 +23,5 @@ public class simple_Repetition_CF {
 
         }
 
-    }
-    public static boolean isPrime(Long n) {
-        if (n < 2)
-            return false;
-        if (n < 4)
-            return true;
-        if ((n & 1) == 0)
-            return false;
-        for (long i = 3; i * i <= n; i++)
-            if (n % i == 0)
-                return false;
-        return true;
     }
 }

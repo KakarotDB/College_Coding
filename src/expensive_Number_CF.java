@@ -8,10 +8,15 @@ public class expensive_Number_CF {
         while (t--> 0)
         {
             String n = sc.next();
-            if(n.length()>1)
-            System.out.println(n.length()-1);
-            else
-                System.out.println("1");
+            int count_zero = 0;
+            int mx = 0;
+            for (int i = 0; i < n.length(); i++) {
+                if (n.charAt(i)!= '0')
+                   mx = Math.max(mx, count_zero+1);
+                else
+                    count_zero++;
+            }
+            System.out.println(n.length()-mx);
 
 
 
