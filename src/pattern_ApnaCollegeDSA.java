@@ -1,10 +1,9 @@
-import java.util.Scanner;
-
 public class pattern_ApnaCollegeDSA {
     public static void main(String[] args) {
 //        Hollow_Rectangle_Pattern(4,5);
-        inverted_and_Rotated_Half_Pyramid(4);
-
+//        inverted_and_Rotated_Half_Pyramid(4);
+//        Flyods_Triangle(5);
+        Zeros_And_Ones_Triangle(5);
     }
     public static void inverted_and_Rotated_Half_Pyramid(int rows)
     {
@@ -38,6 +37,31 @@ public class pattern_ApnaCollegeDSA {
                 }
             }
             System.out.print("\n");
+        }
+
+    }
+    public static void Flyods_Triangle (int rows)
+    {
+        int counter = 1;
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j <= i; j++) {
+                System.out.print(counter+++ " ");
+            }
+            System.out.println();
+
+        }
+
+    }
+    public static void Zeros_And_Ones_Triangle(int rows)
+    {
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j <= i; j++) {
+                if ((i+j) % 2 == 0)
+                    System.out.print("1 ");
+                else
+                    System.out.print("0 ");
+            }
+            System.out.println();
         }
 
     }

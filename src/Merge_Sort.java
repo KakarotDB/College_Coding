@@ -19,16 +19,15 @@ public class Merge_Sort {
         int j = 0;
         for (int i = 0; i < array.length; i++) {
             if (i < middle_position)
-                leftArray[i] = array[i];
+                leftArray[i] = array[i]; // filling each sub-array
             else {
                 rightArray[j] = array[i];
                 j++;
             }
         }
-        merge_Sort(leftArray);
+        merge_Sort(leftArray); //recursion
         merge_Sort(rightArray);
-        Merge(leftArray, rightArray, array);
-
+        Merge(leftArray, rightArray, array); //merging the sub-arrays
     }
 
     private static void Merge(int[] leftArray, int[] rightArray, int[] array) {
