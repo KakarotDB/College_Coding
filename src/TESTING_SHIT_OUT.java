@@ -1,14 +1,19 @@
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.PriorityQueue;
 
 public class TESTING_SHIT_OUT {
-    public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        PrintWriter pw = new PrintWriter(System.out);
-        String[] input = new String[200];
+    public static void main(String[] args) {
+        PriorityQueue<Integer> pq = new PriorityQueue<>();
+        pq.add(5);
+        pq.add(4);
+        pq.add(3);
+        pq.add(2);
+        pq.add(1);
+        System.out.println("Priority Queue content : " + pq);
+        System.out.println("Head of queue : " + pq.peek());
+        System.out.print("Popping elements : ");
+        while (!pq.isEmpty())
+            System.out.print(pq.poll()+ " ");
+        System.out.println();
+
     }
 }

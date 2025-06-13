@@ -20,6 +20,29 @@ public class Main {
             for (int i = 0; i < n; i++) {
                 array[i] = Long.parseLong(st.nextToken());
             }
+            long answer = 0;
+            for (int i = 0; i < 63; i++) {
+                PriorityQueue<Long> pq = new PriorityQueue<>();
+                long num  = (long) 1<<i;
+                for (int j = 0; j < n; j++) {
+                    long element = array[j];
+                    if ((num & element) > 0)
+                        answer++;
+                    else
+                    {
+                        pq.add(num);
+                    }
+
+                }
+                while (!pq.isEmpty() && k>=pq.peek())
+                {
+                    long costToSetBit = pq.poll();
+                    answer++;
+                    k-=costToSetBit;
+                }
+
+            }
+            System.out.println(answer);
         }
     }
 }
