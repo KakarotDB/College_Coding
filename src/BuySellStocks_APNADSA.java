@@ -46,7 +46,7 @@ public class BuySellStocks_APNADSA {
 //        }
 //        return max_profit;
 //    }
-    static boolean isAllPricesSame(int[] prices) //checks to see if all prices are same
+    public static boolean isAllPricesSame(int[] prices) //checks to see if all prices are same
     {
         for (int i = 0; i < prices.length-1; i++) {
             if (prices[i] != prices[i+1])

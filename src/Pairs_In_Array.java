@@ -11,6 +11,7 @@ public class Pairs_In_Array {
                 System.out.print("(" +array[i] + "," + array[j]+ ") ");
 
             }
+
             System.out.println();
 
         }
