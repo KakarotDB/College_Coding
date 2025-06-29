@@ -11,5 +11,11 @@ public class XORCalculator {
             xor^=numbers[i];
         }
         System.out.println("XOR operation result = " + xor);
+        System.out.format("Binary representation : ");
+        for (int i = 0; i < numbers.length - 1; i++) {
+            System.out.print(Integer.toBinaryString(numbers[i]) + "^");
+        }
+        System.out.print(Integer.toBinaryString(numbers[numbers.length - 1]));
+        System.out.print(" = " + Integer.toBinaryString(xor));
     }
 }

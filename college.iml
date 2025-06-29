@@ -3,6 +3,7 @@
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
     <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/Codeforces - Codeforces Round 1033 Div 2 and CodeNite 2025" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/Codeforces - Codeforces Round  1027 Div 3/B. Not Quite a Palindromic String" />
     </content>
