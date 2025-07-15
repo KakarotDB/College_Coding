@@ -4,107 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0817d8b8-2de5-414d-ae68-05a241d5edd5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/CSES - CSES Problem Set - Distinct Numbers/CSES - CSES Problem Set - Distinct Numbers.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CSES - CSES Problem Set Apple Division/CSES - CSES Problem Set Apple Division.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CSES - CSES Problem Set/CSES - CSES Problem Set.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CodeChef - START179D/CodeChef - START179D.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CodeChef - START189/CodeChef - START189.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codeforces - 2021-2022 ICPC NERC Northern Eurasia Onsite Unrated Online Mirror ICPC Rules Teams Preferred/Codeforces - 2021-2022 ICPC NERC Northern Eurasia Onsite Unrated Online Mirror ICPC Rules Teams Preferred.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codeforces - 2022-2023 ICPC NERC Southern and Volga Russian Regional Contest Online Mirror ICPC Rules Preferably Teams/M. Minimum LCM/M_Minimum_LCM.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codeforces - COMPFEST 14 - Preliminary Online Mirror Unrated ICPC Rules Teams Preferred/B. Basketball Together/B_Basketball_Together.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codeforces - COMPFEST 15 - Preliminary Online Mirror Unrated ICPC Rules Teams Preferred/Codeforces - COMPFEST 15 - Preliminary Online Mirror Unrated ICPC Rules Teams Preferred.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codeforces - CodeTON Round 7 Div 1  Div 2 Rated Prizes/Codeforces - CodeTON Round 7 Div 1  Div 2 Rated Prizes.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codeforces - Codeforces Global Round 21/Codeforces - Codeforces Global Round 21.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codeforces - Codeforces Round  828 Div 3/C. Traffic Light/C_Traffic_Light.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codeforces - Codeforces Round 1029 Div 3/Codeforces - Codeforces Round 1029 Div 3.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codeforces - Codeforces Round 1030 Div 2/Codeforces - Codeforces Round 1030 Div 2.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codeforces - Codeforces Round 1031 Div 2/Codeforces - Codeforces Round 1031 Div 2.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codeforces - Codeforces Round 1032 Div 3/Codeforces - Codeforces Round 1032 Div 3.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codeforces - Codeforces Round 1033 Div 2 and CodeNite 2025/A. Square of Rectangles/A_Square_of_Rectangles.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codeforces - Codeforces Round 1033 Div 2 and CodeNite 2025/B. Square Pool/B_Square_Pool.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codeforces - Codeforces Round 107 Div 2/Codeforces - Codeforces Round 107 Div 2.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codeforces - Codeforces Round 146 Div 2/Codeforces - Codeforces Round 146 Div 2.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codeforces - Codeforces Round 684 Div 2/Codeforces - Codeforces Round 684 Div 2.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codeforces - Codeforces Round 694 Div 2/Codeforces - Codeforces Round 694 Div 2.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codeforces - Codeforces Round 726 Div 2/Codeforces - Codeforces Round 726 Div 2.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codeforces - Codeforces Round 730 Div 2/Codeforces - Codeforces Round 730 Div 2.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codeforces - Codeforces Round 738 Div 2/Codeforces - Codeforces Round 828.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codeforces - Codeforces Round 748 Div 3/Codeforces - Codeforces Round 748 Div 3.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codeforces - Codeforces Round 750 Div 2/Codeforces - Codeforces Round 750 Div 2.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codeforces - Codeforces Round 753 Div 3/Codeforces - Codeforces Round 753 Div 3.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codeforces - Codeforces Round 764 Div 3/Codeforces - Codeforces Round 764 Div 3.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codeforces - Codeforces Round 781 Div 2/Codeforces - Codeforces Round 781 Div 2.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codeforces - Codeforces Round 787 Div 3/Codeforces - Codeforces Round 787 Div 3.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codeforces - Codeforces Round 791 Div 2/Codeforces - Codeforces Round 791 Div 2.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codeforces - Codeforces Round 819 Div 1  Div 2 and Grimoire of Code Annual Contest 2022/Codeforces - Codeforces Round 819 Div 1  Div 2 and Grimoire of Code Annual Contest 2022.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codeforces - Codeforces Round 845 Div 2 and ByteRace 2023/Codeforces - Codeforces Round 845 Div 2 and ByteRace 2023.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codeforces - Codeforces Round 849 Div 4/Codeforces - Codeforces Round 849 Div 4.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codeforces - Codeforces Round 849 Div 4/D. Distinct Split/D_Distinct_Split.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codeforces - Codeforces Round 853 Div 2/Codeforces - Codeforces Round 853 Div 2.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codeforces - Codeforces Round 856 Div 2/Codeforces - Codeforces Round 856 Div 2.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codeforces - Codeforces Round 858 Div 2/Codeforces - Codeforces Round 858 Div 2.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codeforces - Codeforces Round 859 Div 4/Codeforces - Codeforces Round 859 Div 4.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codeforces - Codeforces Round 862 Div 2/Codeforces - Codeforces Round 862 Div 2.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codeforces - Codeforces Round 871 Div 4/Codeforces - Codeforces Round 871 Div 4.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codeforces - Codeforces Round 873 Div 2/Codeforces - Codeforces Round 873 Div 2.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codeforces - Codeforces Round 875 Div 2/B. Array merging/B_Array_merging.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codeforces - Codeforces Round 875 Div 2/Codeforces - Codeforces Round 875 Div 2.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codeforces - Codeforces Round 878 Div 3/C. Ski Resort/C_Ski_Resort.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codeforces - Codeforces Round 878 Div 3/Codeforces - Codeforces Round 878 Div 3.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codeforces - Codeforces Round 879 Div 2/Codeforces - Codeforces Round 879 Div 2.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codeforces - Codeforces Round 886 Div 4/Codeforces - Codeforces Round 886 Div 4.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codeforces - Codeforces Round 887 Div 2/Codeforces - Codeforces Round 887 Div 2.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codeforces - Codeforces Round 889 Div 2/Codeforces - Codeforces Round 889 Div 2.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codeforces - Codeforces Round 891 Div 3/Codeforces - Codeforces Round 891 Div 3.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codeforces - Codeforces Round 892 Div 2/B. Olya and Game with Arrays/B_Olya_and_Game_with_Arrays.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codeforces - Codeforces Round 892 Div 2/Codeforces - Codeforces Round 892 Div 2.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codeforces - Codeforces Round 893 Div 2/Codeforces - Codeforces Round 893 Div 2.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codeforces - Codeforces Round 894 Div 3/Codeforces - Codeforces Round 894 Div 3.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codeforces - Codeforces Round 896 Div 2/Codeforces - Codeforces Round 896 Div 2.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codeforces - Codeforces Round 898 Div 4/Codeforces - Codeforces Round 898 Div 4.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codeforces - Codeforces Round 900 Div 3/Codeforces - Codeforces Round 900 Div 3.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codeforces - Codeforces Round 901 Div 2/Codeforces - Codeforces Round 901 Div 2.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codeforces - Codeforces Round 902 Div 1 based on COMPFEST 15 - Final Round/A. Helmets in Night Light/A_Helmets_in_Night_Light.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codeforces - Codeforces Round 902 Div 1 based on COMPFEST 15 - Final Round/Codeforces - Codeforces Round 902 Div 1 based on COMPFEST 15 - Final Round.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codeforces - Codeforces Round 902 Div 2 based on COMPFEST 15 - Final Round/Codeforces - Codeforces Round 902 Div 2 based on COMPFEST 15 - Final Round.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codeforces - Codeforces Round 903 Div 3/Codeforces - Codeforces Round 903 Div 3.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codeforces - Codeforces Round 905 Div 3/C. Raspberries/C_Raspberries.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codeforces - Codeforces Round 905 Div 3/C. Raspberries/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codeforces - Codeforces Round 905 Div 3/Codeforces - Codeforces Round 905 Div 3.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codeforces - Codeforces Round 906 Div 2/Codeforces - Codeforces Round 906 Div 2.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codeforces - Codeforces Round 909 Div 3/Codeforces - Codeforces Round 909 Div 3.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codeforces - Codeforces Round 911 Div 2/Codeforces - Codeforces Round 911 Div 2.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codeforces - Codeforces Round 912 Div 2/Codeforces - Codeforces Round 912 Div 2.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codeforces - Codeforces Round 914 Div 2/Codeforces - Codeforces Round 914 Div 2.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codeforces - Educational Codeforces Round 116 Rated for Div 2/Codeforces - Educational Codeforces Round 116 Rated for Div 2.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codeforces - Educational Codeforces Round 139 Rated for Div 2/Codeforces - Educational Codeforces Round 139 Rated for Div 2.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codeforces - Educational Codeforces Round 141 Rated for Div 2/Codeforces - Educational Codeforces Round 141 Rated for Div 2.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codeforces - Educational Codeforces Round 146 Rated for Div 2/Codeforces - Educational Codeforces Round 146 Rated for Div 2.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codeforces - Educational Codeforces Round 149 Rated for Div 2/Codeforces - Educational Codeforces Round 149 Rated for Div 2.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codeforces - Educational Codeforces Round 151 Rated for Div 2/Codeforces - Educational Codeforces Round 151 Rated for Div 2.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codeforces - Educational Codeforces Round 152 Rated for Div 2/B. Monsters/B_Monsters.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codeforces - Educational Codeforces Round 152 Rated for Div 2/Codeforces - Educational Codeforces Round 152 Rated for Div 2.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codeforces - Educational Codeforces Round 158 Rated for Div 2/Codeforces - Educational Codeforces Round 158 Rated for Div 2.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codeforces - Educational Codeforces Round 160 Rated for Div 2/Codeforces - Educational Codeforces Round 160 Rated for Div 2.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codeforces - Educational Codeforces Round 179 Rated for Div 2/Codeforces - Educational Codeforces Round 179 Rated for Div 2.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codeforces - Educational Codeforces Round 90 Rated for Div 2/Codeforces - Educational Codeforces Round 90 Rated for Div 2.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codeforces - Educational Codeforces Round 91 Rated for Div 2/Codeforces - Educational Codeforces Round 91 Rated for Div 2.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codeforces - Pinely Round 1 Div 1  Div 2/Codeforces - Pinely Round 1 Div 1  Div 2.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Codeforces - USACO Guide Problem Submission/Codeforces - USACO Guide Problem Submission.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/College_Coding.iml" afterDir="false" />
+    <list default="true" id="0817d8b8-2de5-414d-ae68-05a241d5edd5" name="Changes" comment="More practice lol">
       <change beforePath="$PROJECT_DIR$/.autocp" beforeDir="false" afterPath="$PROJECT_DIR$/.autocp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/kotlinc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Codeforces - COMPFEST 15 - Preliminary Online Mirror Unrated ICPC Rules Teams Preferred/A. Ambitious Kid/A_Ambitious_Kid.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Codeforces - COMPFEST 15 - Preliminary Online Mirror Unrated ICPC Rules Teams Preferred/A. Ambitious Kid/A_Ambitious_Kid.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/college.iml" beforeDir="false" afterPath="$PROJECT_DIR$/college.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TESTING_SHIT_OUT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TESTING_SHIT_OUT.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/XORCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/XORCalculator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,6 +25,21 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;KakarotDB&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/KakarotDB/College_Coding.git&quot;,
+    &quot;accountId&quot;: &quot;f23d9456-3572-41b3-9b28-3a28c730b31d&quot;
+  }
+}</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Codeforces - Codeforces Round 1034 Div 3/C. Prefix Min and Suffix Max/Main.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
@@ -140,28 +59,48 @@
     "Application.Main.executor": "Run",
     "Application.TESTING_SHIT_OUT.executor": "Run",
     "Application.XORCalculator.executor": "Run",
+    "AutoCp Solution.A. Add and Divide.executor": "Run",
+    "AutoCp Solution.A. Blackboard Game.executor": "Run",
     "AutoCp Solution.A. Business trip.executor": "Run",
+    "AutoCp Solution.A. Buying Torches.executor": "Run",
     "AutoCp Solution.A. Case of the Zeros and Ones.executor": "Run",
     "AutoCp Solution.A. I'm bored with life.executor": "Run",
+    "AutoCp Solution.A. Johnny and Ancient Computer.executor": "Run",
     "AutoCp Solution.A. Race.executor": "Run",
     "AutoCp Solution.A. Red Versus Blue.executor": "Run",
+    "AutoCp Solution.A. Reverse a Substring.executor": "Run",
     "AutoCp Solution.A. Square of Rectangles.executor": "Run",
     "AutoCp Solution.Associative Array.executor": "Run",
     "AutoCp Solution.B - The 3n + 1 problem.executor": "Run",
     "AutoCp Solution.B. Basketball Together.executor": "Run",
     "AutoCp Solution.B. Beautiful Array.executor": "Run",
+    "AutoCp Solution.B. Bogosort.executor": "Run",
+    "AutoCp Solution.B. Different Divisors.executor": "Run",
     "AutoCp Solution.B. Divan and a New Project.executor": "Run",
+    "AutoCp Solution.B. Erase First or Second Letter.executor": "Run",
+    "AutoCp Solution.B. Fair Numbers.executor": "Run",
     "AutoCp Solution.B. Luke is a Foodie.executor": "Run",
+    "AutoCp Solution.B. MEXor Mixup.executor": "Run",
+    "AutoCp Solution.B. Numbers Box.executor": "Run",
     "AutoCp Solution.B. Roof Construction.executor": "Run",
     "AutoCp Solution.B. Shoe Shuffling.executor": "Run",
     "AutoCp Solution.B. Shrinking Array.executor": "Run",
     "AutoCp Solution.B. Square Pool.executor": "Run",
+    "AutoCp Solution.B. Tournament.executor": "Run",
     "AutoCp Solution.B. Triangles on a Rectangle.executor": "Run",
+    "AutoCp Solution.B. Valerii Against Everyone.executor": "Run",
+    "AutoCp Solution.C. Double-ended Strings.executor": "Run",
+    "AutoCp Solution.C. Move Brackets.executor": "Run",
+    "AutoCp Solution.C. Prefix Min and Suffix Max.executor": "Run",
+    "AutoCp Solution.C. Quests.executor": "Run",
     "AutoCp Solution.C. Traffic Light.executor": "Run",
+    "AutoCp Solution.D. Binary String Battle.executor": "Run",
     "AutoCp Solution.D. Black and White Stripe.executor": "Run",
     "AutoCp Solution.M. Minimum LCM.executor": "Run",
     "AutoCp Solution.Two Knights.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Notification.DisplayName-DoNotAsk-vcs.commit.checks.failed": "Commit and push checks failed",
+    "Notification.DoNotAsk-vcs.commit.checks.failed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
     "RunOnceActivity.git.unshallow": "true",
@@ -170,10 +109,10 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "editing.templates"
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.XORCalculator">
+  <component name="RunManager" selected="AutoCp Solution.C. Quests">
     <configuration name="TESTING_SHIT_OUT" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="TESTING_SHIT_OUT" />
       <module name="College_Coding" />
@@ -181,47 +120,49 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="XORCalculator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="XORCalculator" />
-      <module name="College_Coding" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="B. Divan and a New Project" type="AutoCp" factoryName="AutoCp" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
+    <configuration name="A. Reverse a Substring" type="AutoCp" factoryName="AutoCp" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
       <option name="allowRunningInParallel" value="false" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
       </option>
-      <option name="solutionFilePath" value="C:\Users\sucha\IdeaProjects\College_Coding\Codeforces - Codeforces Round 757 Div 2\B. Divan and a New Project\Main.java" />
+      <option name="solutionFilePath" value="C:\Users\sucha\IdeaProjects\College_Coding\Codeforces - Educational Codeforces Round 63 Rated for Div 2\A. Reverse a Substring\Main.java" />
       <method v="2" />
     </configuration>
-    <configuration name="B. Roof Construction" type="AutoCp" factoryName="AutoCp" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
+    <configuration name="B. Bogosort" type="AutoCp" factoryName="AutoCp" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
       <option name="allowRunningInParallel" value="false" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
       </option>
-      <option name="solutionFilePath" value="C:\Users\sucha\IdeaProjects\College_Coding\Codeforces - Codeforces Round 769 Div 2\B. Roof Construction\Main.java" />
+      <option name="solutionFilePath" value="C:\Users\sucha\IdeaProjects\College_Coding\Codeforces - Educational Codeforces Round 83 Rated for Div 2\B. Bogosort\Main.java" />
       <method v="2" />
     </configuration>
-    <configuration name="B. Triangles on a Rectangle" type="AutoCp" factoryName="AutoCp" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
+    <configuration name="B. Erase First or Second Letter" type="AutoCp" factoryName="AutoCp" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
       <option name="allowRunningInParallel" value="false" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
       </option>
-      <option name="solutionFilePath" value="C:\Users\sucha\IdeaProjects\College_Coding\Codeforces - Educational Codeforces Round 119 Rated for Div 2\B. Triangles on a Rectangle\Main.java" />
+      <option name="solutionFilePath" value="C:\Users\sucha\IdeaProjects\College_Coding\Codeforces - Codeforces Round 917 Div 2\B. Erase First or Second Letter\Main.java" />
+      <method v="2" />
+    </configuration>
+    <configuration name="C. Quests" type="AutoCp" factoryName="AutoCp" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <option name="solutionFilePath" value="C:\Users\sucha\IdeaProjects\College_Coding\Codeforces - Codeforces Round 916 Div 3\C. Quests\Main.java" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.XORCalculator" />
-        <item itemvalue="AutoCp Solution.B. Divan and a New Project" />
-        <item itemvalue="AutoCp Solution.B. Triangles on a Rectangle" />
-        <item itemvalue="AutoCp Solution.B. Roof Construction" />
+        <item itemvalue="AutoCp Solution.C. Quests" />
         <item itemvalue="Application.TESTING_SHIT_OUT" />
+        <item itemvalue="AutoCp Solution.B. Erase First or Second Letter" />
+        <item itemvalue="AutoCp Solution.A. Reverse a Substring" />
+        <item itemvalue="AutoCp Solution.B. Bogosort" />
       </list>
     </recent_temporary>
   </component>
@@ -233,7 +174,36 @@
       <option name="presentableId" value="Default" />
       <updated>1750518938786</updated>
     </task>
+    <task id="LOCAL-00001" summary="More practice lol">
+      <option name="closed" value="true" />
+      <created>1751182413419</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1751182413419</updated>
+    </task>
+    <task id="LOCAL-00002" summary="More practice lol">
+      <option name="closed" value="true" />
+      <created>1751182431565</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1751182431565</updated>
+    </task>
+    <task id="LOCAL-00003" summary="More practice lol">
+      <option name="closed" value="true" />
+      <created>1751379911042</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1751379911042</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="More practice lol" />
+    <option name="LAST_COMMIT_MESSAGE" value="More practice lol" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
