@@ -8,6 +8,12 @@
       <change beforePath="$PROJECT_DIR$/.autocp" beforeDir="false" afterPath="$PROJECT_DIR$/.autocp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codeforces - Codeforces Round 898 Div 4/C. Target Practice/C_Target_Practice.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codeforces - Codeforces Round 898 Div 4/C. Target Practice/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codeforces - Codeforces Round 898 Div 4/Codeforces - Codeforces Round 898 Div 4.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codeforces - Codeforces Round 909 Div 3/A. Game with Integers/A_Game_with_Integers.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codeforces - Codeforces Round 909 Div 3/A. Game with Integers/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codeforces - Codeforces Round 909 Div 3/Codeforces - Codeforces Round 909 Div 3.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TESTING_SHIT_OUT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TESTING_SHIT_OUT.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -40,6 +46,10 @@
 }</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Codeforces - Codeforces Round 1034 Div 3/C. Prefix Min and Suffix Max/Main.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Codeforces - Codeforces Round 909 Div 3/C. Yarik and Array/Main.java" root0="SKIP_HIGHLIGHTING" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
@@ -54,65 +64,123 @@
     <option name="showScratchesAndConsoles" value="false" />
     <option name="sortKey" value="BY_TIME_DESCENDING" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "Application.TESTING_SHIT_OUT.executor": "Run",
-    "Application.XORCalculator.executor": "Run",
-    "AutoCp Solution.A. Add and Divide.executor": "Run",
-    "AutoCp Solution.A. Blackboard Game.executor": "Run",
-    "AutoCp Solution.A. Business trip.executor": "Run",
-    "AutoCp Solution.A. Buying Torches.executor": "Run",
-    "AutoCp Solution.A. Case of the Zeros and Ones.executor": "Run",
-    "AutoCp Solution.A. I'm bored with life.executor": "Run",
-    "AutoCp Solution.A. Johnny and Ancient Computer.executor": "Run",
-    "AutoCp Solution.A. Race.executor": "Run",
-    "AutoCp Solution.A. Red Versus Blue.executor": "Run",
-    "AutoCp Solution.A. Reverse a Substring.executor": "Run",
-    "AutoCp Solution.A. Square of Rectangles.executor": "Run",
-    "AutoCp Solution.Associative Array.executor": "Run",
-    "AutoCp Solution.B - The 3n + 1 problem.executor": "Run",
-    "AutoCp Solution.B. Basketball Together.executor": "Run",
-    "AutoCp Solution.B. Beautiful Array.executor": "Run",
-    "AutoCp Solution.B. Bogosort.executor": "Run",
-    "AutoCp Solution.B. Different Divisors.executor": "Run",
-    "AutoCp Solution.B. Divan and a New Project.executor": "Run",
-    "AutoCp Solution.B. Erase First or Second Letter.executor": "Run",
-    "AutoCp Solution.B. Fair Numbers.executor": "Run",
-    "AutoCp Solution.B. Luke is a Foodie.executor": "Run",
-    "AutoCp Solution.B. MEXor Mixup.executor": "Run",
-    "AutoCp Solution.B. Numbers Box.executor": "Run",
-    "AutoCp Solution.B. Roof Construction.executor": "Run",
-    "AutoCp Solution.B. Shoe Shuffling.executor": "Run",
-    "AutoCp Solution.B. Shrinking Array.executor": "Run",
-    "AutoCp Solution.B. Square Pool.executor": "Run",
-    "AutoCp Solution.B. Tournament.executor": "Run",
-    "AutoCp Solution.B. Triangles on a Rectangle.executor": "Run",
-    "AutoCp Solution.B. Valerii Against Everyone.executor": "Run",
-    "AutoCp Solution.C. Double-ended Strings.executor": "Run",
-    "AutoCp Solution.C. Move Brackets.executor": "Run",
-    "AutoCp Solution.C. Prefix Min and Suffix Max.executor": "Run",
-    "AutoCp Solution.C. Quests.executor": "Run",
-    "AutoCp Solution.C. Traffic Light.executor": "Run",
-    "AutoCp Solution.D. Binary String Battle.executor": "Run",
-    "AutoCp Solution.D. Black and White Stripe.executor": "Run",
-    "AutoCp Solution.M. Minimum LCM.executor": "Run",
-    "AutoCp Solution.Two Knights.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "Notification.DisplayName-DoNotAsk-vcs.commit.checks.failed": "Commit and push checks failed",
-    "Notification.DoNotAsk-vcs.commit.checks.failed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Sieve_of_Eratosthenes.executor&quot;: &quot;Run&quot;,
+    &quot;Application.TESTING_SHIT_OUT.executor&quot;: &quot;Run&quot;,
+    &quot;Application.XORCalculator.executor&quot;: &quot;Run&quot;,
+    &quot;AutoCp Solution.A. Add and Divide.executor&quot;: &quot;Run&quot;,
+    &quot;AutoCp Solution.A. Add or XOR.executor&quot;: &quot;Run&quot;,
+    &quot;AutoCp Solution.A. Blackboard Game.executor&quot;: &quot;Run&quot;,
+    &quot;AutoCp Solution.A. Business trip.executor&quot;: &quot;Run&quot;,
+    &quot;AutoCp Solution.A. Buying Torches.executor&quot;: &quot;Run&quot;,
+    &quot;AutoCp Solution.A. Case of the Zeros and Ones.executor&quot;: &quot;Run&quot;,
+    &quot;AutoCp Solution.A. Deranged Deletions.executor&quot;: &quot;Run&quot;,
+    &quot;AutoCp Solution.A. Difficult Contest.executor&quot;: &quot;Run&quot;,
+    &quot;AutoCp Solution.A. Dinner Time.executor&quot;: &quot;Run&quot;,
+    &quot;AutoCp Solution.A. Fashionable Array.executor&quot;: &quot;Run&quot;,
+    &quot;AutoCp Solution.A. Gellyfish and Tricolor Pansy.executor&quot;: &quot;Run&quot;,
+    &quot;AutoCp Solution.A. Greedy Grid.executor&quot;: &quot;Run&quot;,
+    &quot;AutoCp Solution.A. Homework.executor&quot;: &quot;Run&quot;,
+    &quot;AutoCp Solution.A. I'm bored with life.executor&quot;: &quot;Run&quot;,
+    &quot;AutoCp Solution.A. In the Dream.executor&quot;: &quot;Run&quot;,
+    &quot;AutoCp Solution.A. It's Time To Duel.executor&quot;: &quot;Run&quot;,
+    &quot;AutoCp Solution.A. Johnny and Ancient Computer.executor&quot;: &quot;Run&quot;,
+    &quot;AutoCp Solution.A. LRC and VIP.executor&quot;: &quot;Run&quot;,
+    &quot;AutoCp Solution.A. Lever.executor&quot;: &quot;Run&quot;,
+    &quot;AutoCp Solution.A. Mix Mex Max.executor&quot;: &quot;Run&quot;,
+    &quot;AutoCp Solution.A. Only One Digit.executor&quot;: &quot;Run&quot;,
+    &quot;AutoCp Solution.A. Painting With Two Colors.executor&quot;: &quot;Run&quot;,
+    &quot;AutoCp Solution.A. Permutation Warm-Up.executor&quot;: &quot;Run&quot;,
+    &quot;AutoCp Solution.A. Race.executor&quot;: &quot;Run&quot;,
+    &quot;AutoCp Solution.A. Recycling Center.executor&quot;: &quot;Run&quot;,
+    &quot;AutoCp Solution.A. Red Versus Blue.executor&quot;: &quot;Run&quot;,
+    &quot;AutoCp Solution.A. Redstone?.executor&quot;: &quot;Run&quot;,
+    &quot;AutoCp Solution.A. Reverse a Substring.executor&quot;: &quot;Run&quot;,
+    &quot;AutoCp Solution.A. Square of Rectangles.executor&quot;: &quot;Run&quot;,
+    &quot;AutoCp Solution.A. Submission is All You Need.executor&quot;: &quot;Run&quot;,
+    &quot;AutoCp Solution.A. The Fair Nut and Elevator.executor&quot;: &quot;Run&quot;,
+    &quot;AutoCp Solution.A. Three Decks.executor&quot;: &quot;Run&quot;,
+    &quot;AutoCp Solution.A. Vadim's Collection.executor&quot;: &quot;Run&quot;,
+    &quot;AutoCp Solution.Associative Array.executor&quot;: &quot;Run&quot;,
+    &quot;AutoCp Solution.B - The 3n + 1 problem.executor&quot;: &quot;Run&quot;,
+    &quot;AutoCp Solution.B. 250 Thousand Tons of TNT.executor&quot;: &quot;Run&quot;,
+    &quot;AutoCp Solution.B. Add 0 or K.executor&quot;: &quot;Run&quot;,
+    &quot;AutoCp Solution.B. Alternating Series.executor&quot;: &quot;Run&quot;,
+    &quot;AutoCp Solution.B. Apples in Boxes.executor&quot;: &quot;Run&quot;,
+    &quot;AutoCp Solution.B. Basketball Together.executor&quot;: &quot;Run&quot;,
+    &quot;AutoCp Solution.B. Beautiful Array.executor&quot;: &quot;Run&quot;,
+    &quot;AutoCp Solution.B. Bogosort.executor&quot;: &quot;Run&quot;,
+    &quot;AutoCp Solution.B. Collecting Game.executor&quot;: &quot;Run&quot;,
+    &quot;AutoCp Solution.B. Deja Vu.executor&quot;: &quot;Run&quot;,
+    &quot;AutoCp Solution.B. Deque Process.executor&quot;: &quot;Run&quot;,
+    &quot;AutoCp Solution.B. Different Divisors.executor&quot;: &quot;Run&quot;,
+    &quot;AutoCp Solution.B. Divan and a New Project.executor&quot;: &quot;Run&quot;,
+    &quot;AutoCp Solution.B. Down with Brackets.executor&quot;: &quot;Run&quot;,
+    &quot;AutoCp Solution.B. Erase First or Second Letter.executor&quot;: &quot;Run&quot;,
+    &quot;AutoCp Solution.B. Fair Numbers.executor&quot;: &quot;Run&quot;,
+    &quot;AutoCp Solution.B. Fibonacci Cubes.executor&quot;: &quot;Run&quot;,
+    &quot;AutoCp Solution.B. Good Start.executor&quot;: &quot;Run&quot;,
+    &quot;AutoCp Solution.B. Hamiiid, Haaamid... Hamid?.executor&quot;: &quot;Run&quot;,
+    &quot;AutoCp Solution.B. Left and Down.executor&quot;: &quot;Run&quot;,
+    &quot;AutoCp Solution.B. Like the Bitset.executor&quot;: &quot;Run&quot;,
+    &quot;AutoCp Solution.B. Line Segments.executor&quot;: &quot;Run&quot;,
+    &quot;AutoCp Solution.B. Luke is a Foodie.executor&quot;: &quot;Run&quot;,
+    &quot;AutoCp Solution.B. MEXor Mixup.executor&quot;: &quot;Run&quot;,
+    &quot;AutoCp Solution.B. Minimise Sum.executor&quot;: &quot;Run&quot;,
+    &quot;AutoCp Solution.B. Move to the End.executor&quot;: &quot;Run&quot;,
+    &quot;AutoCp Solution.B. No Casino in the Mountains.executor&quot;: &quot;Run&quot;,
+    &quot;AutoCp Solution.B. Numbers Box.executor&quot;: &quot;Run&quot;,
+    &quot;AutoCp Solution.B. Pathless.executor&quot;: &quot;Run&quot;,
+    &quot;AutoCp Solution.B. Roof Construction.executor&quot;: &quot;Run&quot;,
+    &quot;AutoCp Solution.B. SUMdamental Decomposition.executor&quot;: &quot;Run&quot;,
+    &quot;AutoCp Solution.B. Shoe Shuffling.executor&quot;: &quot;Run&quot;,
+    &quot;AutoCp Solution.B. Shrinking Array.executor&quot;: &quot;Run&quot;,
+    &quot;AutoCp Solution.B. Slice to Survive.executor&quot;: &quot;Run&quot;,
+    &quot;AutoCp Solution.B. Square Pool.executor&quot;: &quot;Run&quot;,
+    &quot;AutoCp Solution.B. The Picky Cat.executor&quot;: &quot;Run&quot;,
+    &quot;AutoCp Solution.B. The Secret Number.executor&quot;: &quot;Run&quot;,
+    &quot;AutoCp Solution.B. Tournament.executor&quot;: &quot;Run&quot;,
+    &quot;AutoCp Solution.B. Triangles on a Rectangle.executor&quot;: &quot;Run&quot;,
+    &quot;AutoCp Solution.B. Valerii Against Everyone.executor&quot;: &quot;Run&quot;,
+    &quot;AutoCp Solution.B. Villagers.executor&quot;: &quot;Run&quot;,
+    &quot;AutoCp Solution.C. Against the Difference.executor&quot;: &quot;Run&quot;,
+    &quot;AutoCp Solution.C. Card Game.executor&quot;: &quot;Run&quot;,
+    &quot;AutoCp Solution.C. Double-ended Strings.executor&quot;: &quot;Run&quot;,
+    &quot;AutoCp Solution.C. Even Larger.executor&quot;: &quot;Run&quot;,
+    &quot;AutoCp Solution.C. I Will Definitely Make It.executor&quot;: &quot;Run&quot;,
+    &quot;AutoCp Solution.C. Leftmost Below.executor&quot;: &quot;Run&quot;,
+    &quot;AutoCp Solution.C. Make it Equal.executor&quot;: &quot;Run&quot;,
+    &quot;AutoCp Solution.C. Move Brackets.executor&quot;: &quot;Run&quot;,
+    &quot;AutoCp Solution.C. Prefix Min and Suffix Max.executor&quot;: &quot;Run&quot;,
+    &quot;AutoCp Solution.C. Quests.executor&quot;: &quot;Run&quot;,
+    &quot;AutoCp Solution.C. Traffic Light.executor&quot;: &quot;Run&quot;,
+    &quot;AutoCp Solution.C. Yarik and Array.executor&quot;: &quot;Run&quot;,
+    &quot;AutoCp Solution.C1. The Cunning Seller (easy version).executor&quot;: &quot;Run&quot;,
+    &quot;AutoCp Solution.C2. The Cunning Seller (hard version).executor&quot;: &quot;Run&quot;,
+    &quot;AutoCp Solution.D. Binary String Battle.executor&quot;: &quot;Run&quot;,
+    &quot;AutoCp Solution.D. Black and White Stripe.executor&quot;: &quot;Run&quot;,
+    &quot;AutoCp Solution.D. Stay or Mirror.executor&quot;: &quot;Run&quot;,
+    &quot;AutoCp Solution.E. Building an Aquarium.executor&quot;: &quot;Run&quot;,
+    &quot;AutoCp Solution.M. Minimum LCM.executor&quot;: &quot;Run&quot;,
+    &quot;AutoCp Solution.Problem 2. Milking Order.executor&quot;: &quot;Run&quot;,
+    &quot;AutoCp Solution.Two Knights.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Notification.DisplayName-DoNotAsk-vcs.commit.checks.failed&quot;: &quot;Commit and push checks failed&quot;,
+    &quot;Notification.DoNotAsk-vcs.commit.checks.failed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editing.templates&quot;
   }
-}]]></component>
-  <component name="RunManager" selected="AutoCp Solution.C. Quests">
+}</component>
+  <component name="RunManager" selected="Application.TESTING_SHIT_OUT">
     <configuration name="TESTING_SHIT_OUT" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="TESTING_SHIT_OUT" />
       <module name="College_Coding" />
@@ -120,49 +188,49 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="A. Reverse a Substring" type="AutoCp" factoryName="AutoCp" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
+    <configuration name="A. In the Dream" type="AutoCp" factoryName="AutoCp" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
       <option name="allowRunningInParallel" value="false" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
       </option>
-      <option name="solutionFilePath" value="C:\Users\sucha\IdeaProjects\College_Coding\Codeforces - Educational Codeforces Round 63 Rated for Div 2\A. Reverse a Substring\Main.java" />
+      <option name="solutionFilePath" value="C:\Users\sucha\IdeaProjects\College_Coding\Codeforces - Codeforces Round 1046 Div 2\A. In the Dream\Main.java" />
       <method v="2" />
     </configuration>
-    <configuration name="B. Bogosort" type="AutoCp" factoryName="AutoCp" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
+    <configuration name="B. Like the Bitset" type="AutoCp" factoryName="AutoCp" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
       <option name="allowRunningInParallel" value="false" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
       </option>
-      <option name="solutionFilePath" value="C:\Users\sucha\IdeaProjects\College_Coding\Codeforces - Educational Codeforces Round 83 Rated for Div 2\B. Bogosort\Main.java" />
+      <option name="solutionFilePath" value="C:\Users\sucha\IdeaProjects\College_Coding\Codeforces - Codeforces Round 1046 Div 2\B. Like the Bitset\Main.java" />
       <method v="2" />
     </configuration>
-    <configuration name="B. Erase First or Second Letter" type="AutoCp" factoryName="AutoCp" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
+    <configuration name="C. Against the Difference" type="AutoCp" factoryName="AutoCp" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
       <option name="allowRunningInParallel" value="false" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
       </option>
-      <option name="solutionFilePath" value="C:\Users\sucha\IdeaProjects\College_Coding\Codeforces - Codeforces Round 917 Div 2\B. Erase First or Second Letter\Main.java" />
+      <option name="solutionFilePath" value="C:\Users\sucha\IdeaProjects\College_Coding\Codeforces - Codeforces Round 1046 Div 2\C. Against the Difference\Main.java" />
       <method v="2" />
     </configuration>
-    <configuration name="C. Quests" type="AutoCp" factoryName="AutoCp" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
+    <configuration name="C. Even Larger" type="AutoCp" factoryName="AutoCp" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
       <option name="allowRunningInParallel" value="false" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
       </option>
-      <option name="solutionFilePath" value="C:\Users\sucha\IdeaProjects\College_Coding\Codeforces - Codeforces Round 916 Div 3\C. Quests\Main.java" />
+      <option name="solutionFilePath" value="C:\Users\sucha\IdeaProjects\College_Coding\Codeforces - Codeforces Round 1045 Div 2\C. Even Larger\Main.java" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="AutoCp Solution.C. Quests" />
         <item itemvalue="Application.TESTING_SHIT_OUT" />
-        <item itemvalue="AutoCp Solution.B. Erase First or Second Letter" />
-        <item itemvalue="AutoCp Solution.A. Reverse a Substring" />
-        <item itemvalue="AutoCp Solution.B. Bogosort" />
+        <item itemvalue="AutoCp Solution.C. Against the Difference" />
+        <item itemvalue="AutoCp Solution.B. Like the Bitset" />
+        <item itemvalue="AutoCp Solution.A. In the Dream" />
+        <item itemvalue="AutoCp Solution.C. Even Larger" />
       </list>
     </recent_temporary>
   </component>
@@ -198,7 +266,15 @@
       <option name="project" value="LOCAL" />
       <updated>1751379911042</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="More practice lol">
+      <option name="closed" value="true" />
+      <created>1752574323161</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1752574323161</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
