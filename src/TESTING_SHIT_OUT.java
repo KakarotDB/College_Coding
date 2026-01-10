@@ -1,110 +1,27 @@
-//  E. Mexification
-
-import java.util.*;
-import java.lang.*;
-import java.io.*;
-
-import static java.lang.Math.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.StringTokenizer;
 
 public class TESTING_SHIT_OUT {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         PrintWriter pw = new PrintWriter(System.out);
-        StringTokenizer st;
         int t = Integer.parseInt(br.readLine());
         while (t-- > 0) {
-            st = new StringTokenizer(br.readLine());
-            int n = Integer.parseInt(st.nextToken());
-            long k = Long.parseLong(st.nextToken());
-            Map<Integer, Integer> fmap = new HashMap<>();
-            Set<Integer> set = new HashSet<>();
-            st = new StringTokenizer(br.readLine());
-            int[] a = new int[n];
+            int n = Integer.parseInt(br.readLine());
+            List<Long> a = new ArrayList<>();
+            StringTokenizer st = new StringTokenizer(br.readLine());
             for (int i = 0; i < n; i++) {
-                a[i] = Integer.parseInt(st.nextToken());
-                set.add(a[i]);
+                a.add(Long.parseLong(st.nextToken()));
             }
-            int mex = 0;
-            int sum = 0;
-            for (int i = 0; i <= n; i++) {
-                if (!set.contains(i)){
-                    mex = i;
-                    break;
-                }
+            for (Long l : a) {
+                pw.print(l + " ");
             }
-            Arrays.sort(a);
-            if (mex < a[n - 1]) {
-                for (int i = 0; i < n; i++) {
-                    if (a[i] > mex)
-                        a[i] = mex;
-                    fmap.put(a[i], fmap.getOrDefault(a[i], 0) + 1);
-                }
-                if (k % 2 == 1) {
-                    for (int i = 0; i < n; i++) {
-                        sum += a[i];
-                    }
-                }
-                else {
-                    for (int i = 0; i < n; i++) {
-                        if (a[i] == mex && fmap.get(a[i]) != 1) a[i] ++;
-                        sum += a[i];
-                    }
-                }
-
-            }
-            else {
-                boolean flag = true;
-                for (int i = 0; i < n; i++) {
-                    fmap.put(a[i], fmap.getOrDefault(a[i], 0) + 1);
-                }
-                for (int i = 0; i < n; i++) {
-                    if (fmap.get(a[i]) > 1) flag = false;
-                }
-                if (flag) {
-                    for (int i = 0; i < n; i++) {
-                        sum += a[i];
-                    }
-                }
-                else {
-                    for (int i = 0; i < n; i++) {
-                        if (fmap.get(a[i]) > 1) a[i] = mex;
-                    }
-                    if (k == 1) {
-                        for (int i = 0; i < n; i++) {
-                            sum += a[i];
-                        }
-                    }
-                    else {
-                        for (int i = 0; i < n; i++) {
-                            if (a[i] != i) {
-                                mex = i;
-                                break;
-                            }
-                        }
-                        for (int i = 0; i < n; i++) {
-                            if (a[i] > mex)
-                                a[i] = mex;
-                        }
-                        if (k % 2 == 0) {
-                            for (int i = 0; i < n; i++) {
-                                sum += a[i];
-                            }
-                        }
-                        else {
-                            for (int i = 0; i < n; i++) {
-                                if (a[i] == mex) a[i]++;
-                                sum += a[i];
-                            }
-                        }
-                    }
-                }
-            }
-
-            pw.println(sum);
+            pw.println();
         }
-        pw.flush();
-        pw.close();
-        br.close();
-
     }
 }

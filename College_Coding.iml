@@ -6,6 +6,8 @@
       <sourceFolder url="file://$MODULE_DIR$/Codeforces - Codeforces Round 992 Div 2/A. Game of Division" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Codeforces - Codeforces Round 965 Div 2/B. Minimize Equal Sum Subarrays" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Advent Of Code - 2025" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/Codeforces - Codeforces Round 1032 Div 3/C. Those Who Are With Us" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

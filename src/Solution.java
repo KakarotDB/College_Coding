@@ -1,21 +1,25 @@
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.nio.Buffer;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 class Solution {
-    public int minSwaps(int[] nums) {
-        int count_even = 0;
-        int count_odd = 0;
+    public List<Integer> majorityElement(int[] nums) {
+        Map<Integer, Integer> fmap = new HashMap<>();
         int n = nums.length;
-        for(int i = 0; i < n ; i++){
-            if(nums[i] % 2 == 0)
-                count_even++;
-            else
-                count_odd++;
+        for(int num : nums) {
+            fmap.put(num, fmap.getOrDefault(num, 0) + 1);
         }
-        if (count_even - count_odd > 1)
-            return -1;
-        int swaps = 0;
-        return 1;
+        List<Integer> ans = new ArrayList<>();
+        for (Map.Entry<Integer, Integer> integerIntegerEntry : fmap.entrySet()) {
+            int freq = integerIntegerEntry.getValue();
+            int num = integerIntegerEntry.getKey();
+            if (freq >= n / 3) ans.add(num);
+        }
+        return ans;
+    }
+
+    public static void main(String[] args) {
+
     }
 }

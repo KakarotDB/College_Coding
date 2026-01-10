@@ -8,8 +8,11 @@
       <change beforePath="$PROJECT_DIR$/.autocp" beforeDir="false" afterPath="$PROJECT_DIR$/.autocp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Codeforces - Codeforces Round 902 Div 1 based on COMPFEST 15 - Final Round/A. Helmets in Night Light/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Codeforces - Codeforces Round 902 Div 1 based on COMPFEST 15 - Final Round/A. Helmets in Night Light/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CodeChef - START189/Nutrition Cost/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/CodeChef - START189/Nutrition Cost/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/College_Coding.iml" beforeDir="false" afterPath="$PROJECT_DIR$/College_Coding.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Sieve_of_Eratosthenes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sieve_of_Eratosthenes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Solution.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Sorting_Algorithms.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sorting_Algorithms.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TESTING_SHIT_OUT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TESTING_SHIT_OUT.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -62,23 +65,36 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.Codechef.executor": "Run",
+    "Application.GraphBFS.executor": "Run",
+    "Application.GraphTheory.executor": "Run",
+    "Application.GraphTheoryEdgeWeights.executor": "Run",
     "Application.Main.executor": "Run",
     "Application.Sieve_of_Eratosthenes.executor": "Run",
+    "Application.Solution.executor": "Run",
+    "Application.Sorting_Algorithms.executor": "Run",
     "Application.TESTING_SHIT_OUT.executor": "Run",
     "Application.XORCalculator.executor": "Run",
+    "AutoCp Solution.1. Guess the Number.executor": "Run",
     "AutoCp Solution.A. Add and Divide.executor": "Run",
     "AutoCp Solution.A. Add or XOR.executor": "Run",
+    "AutoCp Solution.A. Alice and Bob.executor": "Run",
     "AutoCp Solution.A. All Lengths Subtraction.executor": "Run",
     "AutoCp Solution.A. Be Positive.executor": "Run",
+    "AutoCp Solution.A. Beautiful Average.executor": "Run",
+    "AutoCp Solution.A. Bestie.executor": "Run",
     "AutoCp Solution.A. Blackboard Game.executor": "Run",
     "AutoCp Solution.A. Business trip.executor": "Run",
     "AutoCp Solution.A. Buying Torches.executor": "Run",
+    "AutoCp Solution.A. CP Battle.executor": "Run",
     "AutoCp Solution.A. Case of the Zeros and Ones.executor": "Run",
+    "AutoCp Solution.A. Circle of Apple Trees.executor": "Run",
     "AutoCp Solution.A. Collatz Conjecture.executor": "Run",
     "AutoCp Solution.A. Deranged Deletions.executor": "Run",
     "AutoCp Solution.A. Difficult Contest.executor": "Run",
     "AutoCp Solution.A. Dinner Time.executor": "Run",
     "AutoCp Solution.A. Fashionable Array.executor": "Run",
+    "AutoCp Solution.A. Filling Shapes.executor": "Run",
     "AutoCp Solution.A. Game of Division.executor": "Run",
     "AutoCp Solution.A. Gellyfish and Tricolor Pansy.executor": "Run",
     "AutoCp Solution.A. Greedy Grid.executor": "Run",
@@ -90,40 +106,61 @@
     "AutoCp Solution.A. Johnny and Ancient Computer.executor": "Run",
     "AutoCp Solution.A. LRC and VIP.executor": "Run",
     "AutoCp Solution.A. Lever.executor": "Run",
+    "AutoCp Solution.A. Little Fairy's Painting.executor": "Run",
     "AutoCp Solution.A. Make it White.executor": "Run",
     "AutoCp Solution.A. Mix Mex Max.executor": "Run",
+    "AutoCp Solution.A. Notelock.executor": "Run",
     "AutoCp Solution.A. Only One Digit.executor": "Run",
+    "AutoCp Solution.A. Operations with Inversions.executor": "Run",
     "AutoCp Solution.A. Painting With Two Colors.executor": "Run",
+    "AutoCp Solution.A. Penchick and Modern Monument.executor": "Run",
     "AutoCp Solution.A. Permutation Warm-Up.executor": "Run",
+    "AutoCp Solution.A. Pizza Time.executor": "Run",
     "AutoCp Solution.A. Race.executor": "Run",
     "AutoCp Solution.A. Recycling Center.executor": "Run",
     "AutoCp Solution.A. Red Versus Blue.executor": "Run",
     "AutoCp Solution.A. Redstone?.executor": "Run",
     "AutoCp Solution.A. Reverse a Substring.executor": "Run",
+    "AutoCp Solution.A. Round Trip.executor": "Run",
+    "AutoCp Solution.A. Same Difference.executor": "Run",
     "AutoCp Solution.A. Silent Classroom.executor": "Run",
+    "AutoCp Solution.A. Sleeping Through Classes.executor": "Run",
+    "AutoCp Solution.A. Souvlaki VS. Kalamaki.executor": "Run",
     "AutoCp Solution.A. Square of Rectangles.executor": "Run",
+    "AutoCp Solution.A. Square?.executor": "Run",
     "AutoCp Solution.A. Sublime Sequence.executor": "Run",
     "AutoCp Solution.A. Submission is All You Need.executor": "Run",
+    "AutoCp Solution.A. Suspension.executor": "Run",
     "AutoCp Solution.A. The Fair Nut and Elevator.executor": "Run",
     "AutoCp Solution.A. Three Decks.executor": "Run",
+    "AutoCp Solution.A. Too Min Too Max.executor": "Run",
     "AutoCp Solution.A. Vadim's Collection.executor": "Run",
+    "AutoCp Solution.A1: Snake Scales (Chapter 1).executor": "Run",
+    "AutoCp Solution.A2: Snake Scales (Chapter 2).executor": "Run",
+    "AutoCp Solution.A: Deciding Points.executor": "Run",
+    "AutoCp Solution.A: Warm Up.executor": "Run",
     "AutoCp Solution.Associative Array.executor": "Run",
     "AutoCp Solution.B - The 3n + 1 problem.executor": "Run",
     "AutoCp Solution.B. 250 Thousand Tons of TNT.executor": "Run",
+    "AutoCp Solution.B. Abraham's Great Escape.executor": "Run",
     "AutoCp Solution.B. Add 0 or K.executor": "Run",
     "AutoCp Solution.B. All the Vowels Please.executor": "Run",
     "AutoCp Solution.B. Alternating Series.executor": "Run",
     "AutoCp Solution.B. Apples in Boxes.executor": "Run",
     "AutoCp Solution.B. Basketball Together.executor": "Run",
     "AutoCp Solution.B. Beautiful Array.executor": "Run",
+    "AutoCp Solution.B. Beautiful String.executor": "Run",
+    "AutoCp Solution.B. Bitwise Reversion.executor": "Run",
     "AutoCp Solution.B. Bogosort.executor": "Run",
     "AutoCp Solution.B. Catching the Krug.executor": "Run",
+    "AutoCp Solution.B. CodeIIEST Strength.executor": "Run",
     "AutoCp Solution.B. Collecting Game.executor": "Run",
     "AutoCp Solution.B. Deja Vu.executor": "Run",
     "AutoCp Solution.B. Deque Process.executor": "Run",
     "AutoCp Solution.B. Different Divisors.executor": "Run",
     "AutoCp Solution.B. Divan and a New Project.executor": "Run",
     "AutoCp Solution.B. Down with Brackets.executor": "Run",
+    "AutoCp Solution.B. Drifting Away.executor": "Run",
     "AutoCp Solution.B. Erase First or Second Letter.executor": "Run",
     "AutoCp Solution.B. Fair Numbers.executor": "Run",
     "AutoCp Solution.B. Fibonacci Cubes.executor": "Run",
@@ -131,6 +168,12 @@
     "AutoCp Solution.B. Game with Doors.executor": "Run",
     "AutoCp Solution.B. Good Start.executor": "Run",
     "AutoCp Solution.B. Hamiiid, Haaamid... Hamid?.executor": "Run",
+    "AutoCp Solution.B. Having Been a Treasurer in the Past, I Help Goblins Deceive.executor": "Run",
+    "AutoCp Solution.B. Indivisible.executor": "Run",
+    "AutoCp Solution.B. Infinity Castle.executor": "Run",
+    "AutoCp Solution.B. JoJo's Incredible Adventures.executor": "Run",
+    "AutoCp Solution.B. Kana and Dragon Quest game.executor": "Run",
+    "AutoCp Solution.B. Keep it Beautiful.executor": "Run",
     "AutoCp Solution.B. Lasers.executor": "Run",
     "AutoCp Solution.B. Left and Down.executor": "Run",
     "AutoCp Solution.B. Like the Bitset.executor": "Run",
@@ -138,23 +181,34 @@
     "AutoCp Solution.B. Luke is a Foodie.executor": "Run",
     "AutoCp Solution.B. MEXor Mixup.executor": "Run",
     "AutoCp Solution.B. Madoka and Underground Competitions.executor": "Run",
+    "AutoCp Solution.B. Make Connected.executor": "Run",
+    "AutoCp Solution.B. Make it Zigzag.executor": "Run",
     "AutoCp Solution.B. Medians.executor": "Run",
     "AutoCp Solution.B. Merging the Sets.executor": "Run",
     "AutoCp Solution.B. Minimise Sum.executor": "Run",
     "AutoCp Solution.B. Minimize Equal Sum Subarrays.executor": "Run",
     "AutoCp Solution.B. Minimize Permutation Subarrays.executor": "Run",
     "AutoCp Solution.B. Move to the End.executor": "Run",
+    "AutoCp Solution.B. Niko's Tactical Cards.executor": "Run",
     "AutoCp Solution.B. No Casino in the Mountains.executor": "Run",
     "AutoCp Solution.B. Not Quite a Palindromic String.executor": "Run",
     "AutoCp Solution.B. Numbers Box.executor": "Run",
+    "AutoCp Solution.B. Optimal Shifts.executor": "Run",
     "AutoCp Solution.B. Pathless.executor": "Run",
+    "AutoCp Solution.B. Pseudo Palindrome.executor": "Run",
+    "AutoCp Solution.B. Pushing Balls.executor": "Run",
     "AutoCp Solution.B. Red and Blue.executor": "Run",
     "AutoCp Solution.B. Roof Construction.executor": "Run",
     "AutoCp Solution.B. SUMdamental Decomposition.executor": "Run",
     "AutoCp Solution.B. Shoe Shuffling.executor": "Run",
     "AutoCp Solution.B. Shrinking Array.executor": "Run",
+    "AutoCp Solution.B. Siga ta Kymata.executor": "Run",
+    "AutoCp Solution.B. Skibidus and Ohio.executor": "Run",
     "AutoCp Solution.B. Slice to Survive.executor": "Run",
+    "AutoCp Solution.B. Split.executor": "Run",
     "AutoCp Solution.B. Square Pool.executor": "Run",
+    "AutoCp Solution.B. Strange Machine.executor": "Run",
+    "AutoCp Solution.B. Tab Closing.executor": "Run",
     "AutoCp Solution.B. The Picky Cat.executor": "Run",
     "AutoCp Solution.B. The Secret Number.executor": "Run",
     "AutoCp Solution.B. Tournament.executor": "Run",
@@ -162,41 +216,84 @@
     "AutoCp Solution.B. Triangles on a Rectangle.executor": "Run",
     "AutoCp Solution.B. Unconventional Pairs.executor": "Run",
     "AutoCp Solution.B. Valerii Against Everyone.executor": "Run",
+    "AutoCp Solution.B. Vicious Labyrinth.executor": "Run",
     "AutoCp Solution.B. Villagers.executor": "Run",
+    "AutoCp Solution.B. WeirdSort.executor": "Run",
+    "AutoCp Solution.B. XOR Array.executor": "Run",
+    "AutoCp Solution.B. Yet Another Broken Keyboard.executor": "Run",
+    "AutoCp Solution.B. Your Name.executor": "Run",
+    "AutoCp Solution.B1: Final Product (Chapter 1).executor": "Run",
+    "AutoCp Solution.B: Defining Prizes.executor": "Run",
+    "AutoCp Solution.C. A-B Palindrome.executor": "Run",
     "AutoCp Solution.C. Against the Difference.executor": "Run",
+    "AutoCp Solution.C. Beautiful XOR.executor": "Run",
     "AutoCp Solution.C. Card Game.executor": "Run",
     "AutoCp Solution.C. Count Good Numbers.executor": "Run",
+    "AutoCp Solution.C. Cyclic Merging.executor": "Run",
+    "AutoCp Solution.C. Different Differences.executor": "Run",
     "AutoCp Solution.C. Double Perspective.executor": "Run",
+    "AutoCp Solution.C. Double Sort.executor": "Run",
     "AutoCp Solution.C. Double-ended Strings.executor": "Run",
     "AutoCp Solution.C. Even Larger.executor": "Run",
+    "AutoCp Solution.C. Flower City Fence.executor": "Run",
     "AutoCp Solution.C. I Will Definitely Make It.executor": "Run",
+    "AutoCp Solution.C. Isamatdin and His Magic Wand!.executor": "Run",
+    "AutoCp Solution.C. Joyboard.executor": "Run",
+    "AutoCp Solution.C. Kanade's Perfect Multiples.executor": "Run",
     "AutoCp Solution.C. Leftmost Below.executor": "Run",
+    "AutoCp Solution.C. Loyalty.executor": "Run",
     "AutoCp Solution.C. MEX rose.executor": "Run",
     "AutoCp Solution.C. Make it Equal.executor": "Run",
     "AutoCp Solution.C. Maximum Even Sum.executor": "Run",
+    "AutoCp Solution.C. Maximum GCD on Whiteboard.executor": "Run",
     "AutoCp Solution.C. Move Brackets.executor": "Run",
+    "AutoCp Solution.C. Needle in a Haystack.executor": "Run",
+    "AutoCp Solution.C. Odd Process.executor": "Run",
     "AutoCp Solution.C. Pacer.executor": "Run",
     "AutoCp Solution.C. Prefix Min and Suffix Max.executor": "Run",
     "AutoCp Solution.C. Quests.executor": "Run",
     "AutoCp Solution.C. Robin Hood in Town.executor": "Run",
+    "AutoCp Solution.C. Superultra's Favorite Permutation.executor": "Run",
     "AutoCp Solution.C. Traffic Light.executor": "Run",
+    "AutoCp Solution.C. Turtle and Good Pairs.executor": "Run",
+    "AutoCp Solution.C. Vitamins.executor": "Run",
+    "AutoCp Solution.C. XOR LCM.executor": "Run",
     "AutoCp Solution.C. XOR and Triangle.executor": "Run",
     "AutoCp Solution.C. Yarik and Array.executor": "Run",
+    "AutoCp Solution.C1. No Cost Too Great (Easy Version).executor": "Run",
+    "AutoCp Solution.C1. Shohag Loves XOR (Easy Version).executor": "Run",
     "AutoCp Solution.C1. The Cunning Seller (easy version).executor": "Run",
     "AutoCp Solution.C2. The Cunning Seller (hard version).executor": "Run",
+    "AutoCp Solution.C: Narrowing Down.executor": "Run",
     "AutoCp Solution.D. Binary String Battle.executor": "Run",
     "AutoCp Solution.D. Black and White Stripe.executor": "Run",
+    "AutoCp Solution.D. Challenging Valleys.executor": "Run",
     "AutoCp Solution.D. Destruction of the Dandelion Fields.executor": "Run",
+    "AutoCp Solution.D. Harder Problem.executor": "Run",
+    "AutoCp Solution.D. Not Alone.executor": "Run",
     "AutoCp Solution.D. Replace with Occurrences.executor": "Run",
+    "AutoCp Solution.D. Same Differences.executor": "Run",
     "AutoCp Solution.D. Stay or Mirror.executor": "Run",
+    "AutoCp Solution.D. Yet Another Array Problem.executor": "Run",
     "AutoCp Solution.E. Building an Aquarium.executor": "Run",
     "AutoCp Solution.E. Mexification.executor": "Run",
+    "AutoCp Solution.E. khba Loves to Sleep!.executor": "Run",
+    "AutoCp Solution.F. Football.executor": "Run",
+    "AutoCp Solution.F. Yet Another Problem About Pairs Satisfying an Inequality.executor": "Run",
+    "AutoCp Solution.Ferris Wheel.executor": "Run",
+    "AutoCp Solution.G. Mukhammadali and the Smooth Array.executor": "Run",
+    "AutoCp Solution.G. Past and Present.executor": "Run",
     "AutoCp Solution.M. Minimum LCM.executor": "Run",
     "AutoCp Solution.Problem 2. Milking Order.executor": "Run",
+    "AutoCp Solution.Problem 3. Breed Counting.executor": "Run",
     "AutoCp Solution.Two Knights.executor": "Run",
+    "Downloaded.Files.Path.Enabled": "false",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "Notification.DisplayName-DoNotAsk-vcs.commit.checks.failed": "Commit and push checks failed",
     "Notification.DoNotAsk-vcs.commit.checks.failed": "true",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
     "RunOnceActivity.git.unshallow": "true",
@@ -208,59 +305,59 @@
     "settings.editor.selected.configurable": "fileTemplates"
   }
 }]]></component>
-  <component name="RunManager" selected="AutoCp Solution.B. Catching the Krug">
-    <configuration name="A. Increase or Smash" type="AutoCp" factoryName="AutoCp" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
+  <component name="RunManager" selected="AutoCp Solution.C. Joyboard">
+    <configuration name="B. Vicious Labyrinth" type="AutoCp" factoryName="AutoCp" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
       <option name="allowRunningInParallel" value="false" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
       </option>
-      <option name="solutionFilePath" value="C:\Users\sucha\IdeaProjects\College_Coding\Codeforces - Squarepoint Challenge Codeforces Round 1055 Div 1  Div 2\A. Increase or Smash\Main.java" />
+      <option name="solutionFilePath" value="C:\Users\sucha\IdeaProjects\College_Coding\Codeforces - Codeforces Round 1008 Div 2\B. Vicious Labyrinth\Main.java" />
       <method v="2" />
     </configuration>
-    <configuration name="B. Catching the Krug" type="AutoCp" factoryName="AutoCp" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
+    <configuration name="C. A-B Palindrome" type="AutoCp" factoryName="AutoCp" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
       <option name="allowRunningInParallel" value="false" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
       </option>
-      <option name="solutionFilePath" value="C:\Users\sucha\IdeaProjects\College_Coding\Codeforces - Squarepoint Challenge Codeforces Round 1055 Div 1  Div 2\B. Catching the Krug\Main.java" />
+      <option name="solutionFilePath" value="C:\Users\sucha\IdeaProjects\College_Coding\Codeforces - Codeforces Round 713 Div 3\C. A-B Palindrome\Main.java" />
       <method v="2" />
     </configuration>
-    <configuration name="B. Merging the Sets" type="AutoCp" factoryName="AutoCp" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
+    <configuration name="C. Joyboard" type="AutoCp" factoryName="AutoCp" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
       <option name="allowRunningInParallel" value="false" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
       </option>
-      <option name="solutionFilePath" value="C:\Users\sucha\IdeaProjects\College_Coding\Codeforces - Codeforces Round 1052 Div 2\B. Merging the Sets\Main.java" />
+      <option name="solutionFilePath" value="C:\Users\sucha\IdeaProjects\College_Coding\Codeforces - Codeforces Round 902 Div 2 based on COMPFEST 15 - Final Round\C. Joyboard\Main.java" />
       <method v="2" />
     </configuration>
-    <configuration name="C. Robin Hood in Town" type="AutoCp" factoryName="AutoCp" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
+    <configuration name="C. Superultra's Favorite Permutation" type="AutoCp" factoryName="AutoCp" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
       <option name="allowRunningInParallel" value="false" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
       </option>
-      <option name="solutionFilePath" value="C:\Users\sucha\IdeaProjects\College_Coding\Codeforces - Codeforces Round 974 Div 3\C. Robin Hood in Town\Main.java" />
+      <option name="solutionFilePath" value="C:\Users\sucha\IdeaProjects\College_Coding\Codeforces - Codeforces Round 988 Div 3\C. Superultra's Favorite Permutation\Main.java" />
       <method v="2" />
     </configuration>
-    <configuration name="C. XOR and Triangle" type="AutoCp" factoryName="AutoCp" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
+    <configuration name="C. Turtle and Good Pairs" type="AutoCp" factoryName="AutoCp" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
       <option name="allowRunningInParallel" value="false" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
       </option>
-      <option name="solutionFilePath" value="C:\Users\sucha\IdeaProjects\College_Coding\Codeforces - Codeforces Round 1009 Div 3\C. XOR and Triangle\Main.java" />
+      <option name="solutionFilePath" value="C:\Users\sucha\IdeaProjects\College_Coding\Codeforces - Codeforces Round 968 Div 2\C. Turtle and Good Pairs\Main.java" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="AutoCp Solution.B. Catching the Krug" />
-        <item itemvalue="AutoCp Solution.A. Increase or Smash" />
-        <item itemvalue="AutoCp Solution.B. Merging the Sets" />
-        <item itemvalue="AutoCp Solution.C. XOR and Triangle" />
-        <item itemvalue="AutoCp Solution.C. Robin Hood in Town" />
+        <item itemvalue="AutoCp Solution.C. Joyboard" />
+        <item itemvalue="AutoCp Solution.C. A-B Palindrome" />
+        <item itemvalue="AutoCp Solution.C. Turtle and Good Pairs" />
+        <item itemvalue="AutoCp Solution.B. Vicious Labyrinth" />
+        <item itemvalue="AutoCp Solution.C. Superultra's Favorite Permutation" />
       </list>
     </recent_temporary>
   </component>
@@ -320,7 +417,23 @@
       <option name="project" value="LOCAL" />
       <updated>1756474387132</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="More practice lol">
+      <option name="closed" value="true" />
+      <created>1759578284773</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1759578284773</updated>
+    </task>
+    <task id="LOCAL-00008" summary="More practice lol">
+      <option name="closed" value="true" />
+      <created>1759578293601</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1759578293601</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -333,6 +446,10 @@
         <breakpoint enabled="true" type="java-exception">
           <properties class="java.lang.IndexOutOfBoundsException" package="java.lang" />
           <option name="timeStamp" value="1" />
+        </breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.util.NoSuchElementException" package="java.util" />
+          <option name="timeStamp" value="2" />
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>

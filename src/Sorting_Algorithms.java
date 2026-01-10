@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.Random;
 
 public class Sorting_Algorithms
 {
@@ -48,7 +49,7 @@ public class Sorting_Algorithms
         }
         System.out.println(Arrays.toString(array));
     }
-    public void counting_Sort(int array[])
+    public static void counting_Sort(int array[])
     {
         int min = Arrays.stream(array).min().orElse(0);
         int max = Arrays.stream(array).max().orElse(Integer.MAX_VALUE);
@@ -70,5 +71,22 @@ public class Sorting_Algorithms
         }
     }
 
+    public static void main(String[] args) {
+        int n = (int)1e8;
+        int k = (int) 1e3;
+        int[] array = new int[n];
+        Random rand = new Random();
+        for (int i = 0; i < n; i++) {
+            array[i] = rand.nextInt(k + 1 );
+        }
+        long startTime = System.nanoTime();
+        counting_Sort(array);
+        long endTime = System.nanoTime();
+        System.out.println((endTime - startTime) / 1e9);
+//        for (int i : array) {
+//            System.out.print(i + " ");
+//        }
+//        System.out.println();
+    }
 
 }
