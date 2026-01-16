@@ -51,6 +51,8 @@ public class Main {
             result = 1;
         else
             result = fibonacci_With_Memoization(n - 1, memo) + fibonacci_With_Memoization(n - 2, memo);
+
+        memo[n] = result;
         return result;
     }
 }

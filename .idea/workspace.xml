@@ -4,15 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0817d8b8-2de5-414d-ae68-05a241d5edd5" name="Changes" comment="More practice lol">
+    <list default="true" id="0817d8b8-2de5-414d-ae68-05a241d5edd5" name="Changes" comment="More practice">
       <change beforePath="$PROJECT_DIR$/.autocp" beforeDir="false" afterPath="$PROJECT_DIR$/.autocp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CodeChef - START189/Nutrition Cost/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/CodeChef - START189/Nutrition Cost/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/College_Coding.iml" beforeDir="false" afterPath="$PROJECT_DIR$/College_Coding.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Sieve_of_Eratosthenes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sieve_of_Eratosthenes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Solution.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Sorting_Algorithms.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sorting_Algorithms.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codeforces - Educational Codeforces Round 179 Rated for Div 2/B. Fibonacci Cubes/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Codeforces - Educational Codeforces Round 179 Rated for Div 2/B. Fibonacci Cubes/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TESTING_SHIT_OUT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TESTING_SHIT_OUT.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -83,6 +79,7 @@
     "AutoCp Solution.A. Be Positive.executor": "Run",
     "AutoCp Solution.A. Beautiful Average.executor": "Run",
     "AutoCp Solution.A. Bestie.executor": "Run",
+    "AutoCp Solution.A. Binary Array Game.executor": "Run",
     "AutoCp Solution.A. Blackboard Game.executor": "Run",
     "AutoCp Solution.A. Business trip.executor": "Run",
     "AutoCp Solution.A. Buying Torches.executor": "Run",
@@ -125,6 +122,7 @@
     "AutoCp Solution.A. Same Difference.executor": "Run",
     "AutoCp Solution.A. Silent Classroom.executor": "Run",
     "AutoCp Solution.A. Sleeping Through Classes.executor": "Run",
+    "AutoCp Solution.A. Social Experiment.executor": "Run",
     "AutoCp Solution.A. Souvlaki VS. Kalamaki.executor": "Run",
     "AutoCp Solution.A. Square of Rectangles.executor": "Run",
     "AutoCp Solution.A. Square?.executor": "Run",
@@ -169,6 +167,7 @@
     "AutoCp Solution.B. Good Start.executor": "Run",
     "AutoCp Solution.B. Hamiiid, Haaamid... Hamid?.executor": "Run",
     "AutoCp Solution.B. Having Been a Treasurer in the Past, I Help Goblins Deceive.executor": "Run",
+    "AutoCp Solution.B. Hourglass.executor": "Run",
     "AutoCp Solution.B. Indivisible.executor": "Run",
     "AutoCp Solution.B. Infinity Castle.executor": "Run",
     "AutoCp Solution.B. JoJo's Incredible Adventures.executor": "Run",
@@ -195,6 +194,7 @@
     "AutoCp Solution.B. Numbers Box.executor": "Run",
     "AutoCp Solution.B. Optimal Shifts.executor": "Run",
     "AutoCp Solution.B. Pathless.executor": "Run",
+    "AutoCp Solution.B. Prefix Sum Addicts.executor": "Run",
     "AutoCp Solution.B. Pseudo Palindrome.executor": "Run",
     "AutoCp Solution.B. Pushing Balls.executor": "Run",
     "AutoCp Solution.B. Red and Blue.executor": "Run",
@@ -221,6 +221,7 @@
     "AutoCp Solution.B. WeirdSort.executor": "Run",
     "AutoCp Solution.B. XOR Array.executor": "Run",
     "AutoCp Solution.B. Yet Another Broken Keyboard.executor": "Run",
+    "AutoCp Solution.B. Yet Another MEX Problem.executor": "Run",
     "AutoCp Solution.B. Your Name.executor": "Run",
     "AutoCp Solution.B1: Final Product (Chapter 1).executor": "Run",
     "AutoCp Solution.B: Defining Prizes.executor": "Run",
@@ -236,6 +237,7 @@
     "AutoCp Solution.C. Double-ended Strings.executor": "Run",
     "AutoCp Solution.C. Even Larger.executor": "Run",
     "AutoCp Solution.C. Flower City Fence.executor": "Run",
+    "AutoCp Solution.C. Huge Pile.executor": "Run",
     "AutoCp Solution.C. I Will Definitely Make It.executor": "Run",
     "AutoCp Solution.C. Isamatdin and His Magic Wand!.executor": "Run",
     "AutoCp Solution.C. Joyboard.executor": "Run",
@@ -305,59 +307,57 @@
     "settings.editor.selected.configurable": "fileTemplates"
   }
 }]]></component>
-  <component name="RunManager" selected="AutoCp Solution.C. Joyboard">
-    <configuration name="B. Vicious Labyrinth" type="AutoCp" factoryName="AutoCp" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
+  <component name="RunManager" selected="Application.TESTING_SHIT_OUT">
+    <configuration name="TESTING_SHIT_OUT" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="TESTING_SHIT_OUT" />
+      <module name="College_Coding" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="A. Social Experiment" type="AutoCp" factoryName="AutoCp" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
       <option name="allowRunningInParallel" value="false" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
       </option>
-      <option name="solutionFilePath" value="C:\Users\sucha\IdeaProjects\College_Coding\Codeforces - Codeforces Round 1008 Div 2\B. Vicious Labyrinth\Main.java" />
+      <option name="solutionFilePath" value="C:\Users\sucha\IdeaProjects\College_Coding\Codeforces - Codeforces Round 1072 Div 3\A. Social Experiment\Main.java" />
       <method v="2" />
     </configuration>
-    <configuration name="C. A-B Palindrome" type="AutoCp" factoryName="AutoCp" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
+    <configuration name="B. Fibonacci Cubes" type="AutoCp" factoryName="AutoCp" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
       <option name="allowRunningInParallel" value="false" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
       </option>
-      <option name="solutionFilePath" value="C:\Users\sucha\IdeaProjects\College_Coding\Codeforces - Codeforces Round 713 Div 3\C. A-B Palindrome\Main.java" />
+      <option name="solutionFilePath" value="C:\Users\sucha\IdeaProjects\College_Coding\Codeforces - Educational Codeforces Round 179 Rated for Div 2\B. Fibonacci Cubes\Main.java" />
       <method v="2" />
     </configuration>
-    <configuration name="C. Joyboard" type="AutoCp" factoryName="AutoCp" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
+    <configuration name="B. Hourglass" type="AutoCp" factoryName="AutoCp" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
       <option name="allowRunningInParallel" value="false" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
       </option>
-      <option name="solutionFilePath" value="C:\Users\sucha\IdeaProjects\College_Coding\Codeforces - Codeforces Round 902 Div 2 based on COMPFEST 15 - Final Round\C. Joyboard\Main.java" />
+      <option name="solutionFilePath" value="C:\Users\sucha\IdeaProjects\College_Coding\Codeforces - Codeforces Round 1072 Div 3\B. Hourglass\Main.java" />
       <method v="2" />
     </configuration>
-    <configuration name="C. Superultra's Favorite Permutation" type="AutoCp" factoryName="AutoCp" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
+    <configuration name="C. Huge Pile" type="AutoCp" factoryName="AutoCp" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
       <option name="allowRunningInParallel" value="false" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
       </option>
-      <option name="solutionFilePath" value="C:\Users\sucha\IdeaProjects\College_Coding\Codeforces - Codeforces Round 988 Div 3\C. Superultra's Favorite Permutation\Main.java" />
-      <method v="2" />
-    </configuration>
-    <configuration name="C. Turtle and Good Pairs" type="AutoCp" factoryName="AutoCp" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
-      <option name="allowRunningInParallel" value="false" />
-      <option name="projectPathOnTarget" />
-      <option name="selectedOptions">
-        <list />
-      </option>
-      <option name="solutionFilePath" value="C:\Users\sucha\IdeaProjects\College_Coding\Codeforces - Codeforces Round 968 Div 2\C. Turtle and Good Pairs\Main.java" />
+      <option name="solutionFilePath" value="C:\Users\sucha\IdeaProjects\College_Coding\Codeforces - Codeforces Round 1072 Div 3\C. Huge Pile\Main.java" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="AutoCp Solution.C. Joyboard" />
-        <item itemvalue="AutoCp Solution.C. A-B Palindrome" />
-        <item itemvalue="AutoCp Solution.C. Turtle and Good Pairs" />
-        <item itemvalue="AutoCp Solution.B. Vicious Labyrinth" />
-        <item itemvalue="AutoCp Solution.C. Superultra's Favorite Permutation" />
+        <item itemvalue="Application.TESTING_SHIT_OUT" />
+        <item itemvalue="AutoCp Solution.C. Huge Pile" />
+        <item itemvalue="AutoCp Solution.B. Fibonacci Cubes" />
+        <item itemvalue="AutoCp Solution.B. Hourglass" />
+        <item itemvalue="AutoCp Solution.A. Social Experiment" />
       </list>
     </recent_temporary>
   </component>
@@ -433,12 +433,21 @@
       <option name="project" value="LOCAL" />
       <updated>1759578293601</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="More practice">
+      <option name="closed" value="true" />
+      <created>1768018477748</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1768018477748</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="More practice lol" />
-    <option name="LAST_COMMIT_MESSAGE" value="More practice lol" />
+    <MESSAGE value="More practice" />
+    <option name="LAST_COMMIT_MESSAGE" value="More practice" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
