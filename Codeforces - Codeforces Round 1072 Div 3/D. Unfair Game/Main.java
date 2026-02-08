@@ -18,24 +18,55 @@ public class Main {
         If there is some cyclic shifts with a string s:
         s += s can help in simplifying the problem  
         */
+        int[][] nCr = new int[32][32];
+        nCr[0][0] = 1;
+        for (int i = 0; i < 32; i++) {
+            nCr[i][0] = 1; // nC0 is always 1
+            for (int j = 1; j <= i; j++) {
+                nCr[i][j] = nCr[i - 1][j - 1] + nCr[i - 1][j];
+            }
+        }
         while (t-- > 0) {
             st = new StringTokenizer(br.readLine());
             int n = Integer.parseInt(st.nextToken());
             int k = Integer.parseInt(st.nextToken());
             /*
-            Bob has thought of a number between [1, n] : n = 2 ^ d, d > 0
-            Alice initially knows the parity of chosen number between [1, n]
+            Simplified problem :
+            Given a number 'a', odd -> a -= 1, else a/=2
+            f(a) is number of steps to reach 0
+            How any numbers in between [1,n] such that f(a) > k
 
-            One move:
-                Alice can half or subtract by 1
-                Half number -> only if even
-                Only alice takes turns
+            Per step, we are removing a 0, or unsetting a set bit (binary representation)
+            Number of moves = MSB(a) + SetBits(a) - 1
+            Or, number of moves = 2 * (setbits) + (unsetbits) - 1
+            1 step for MSB + 2 Steps for each 1 + 1 step for each zero
+            [1,n], how many numbers take more than k steps
 
-            After move, response from bob:
+            Count total numbers alice can make 0 in <= k moves
 
+            So totalMoves = msb(takes MSB position amount of moves to reduce to 0) + i(number of setbits) + 1(one more move for the msb itself)
+
+            Now, if we have MSB position, and i extra bits, total numbers that can be built = (msb, i)
+            
 
              */
+            int d = Integer.numberOfTrailingZeros(n);
+            int ans = 0;
+
+//            pw.println(d);
+            for (int msb = 0; msb < d; msb++) {
+                for (int i = 0; i < msb + 1; i++) {
+                    int totalMoves = msb + 1 + i;
+
+                    if (totalMoves <= k) ans += nCr[msb][i];
+                    else break;
+                }
+            }
+
+            if (d + 1 <= k) ans++;
+            pw.println(n - ans);
         }
+
         pw.flush();
         pw.close();
         br.close();
