@@ -4,7 +4,7 @@ import java.lang.*;
 import java.io.*;
 import static java.lang.Math.*;
 
-public class CLASS_NAME {
+public class D_AND_array {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         PrintWriter pw = new PrintWriter(System.out);
@@ -17,6 +17,12 @@ public class CLASS_NAME {
          * Suffix sum can be calculated using TotalSum - CurrentPrefixSum
          * Thinking in number lines can be helpful
          * If there is monoticity -> Binary Search may prove useful
+         * 
+         * so we have bi = f(a)i
+         * 
+         * we have to construct originaly array from this 
+         * 
+         * 
          */
         test: 
         while (t-- > 0) {
@@ -113,10 +119,6 @@ public class CLASS_NAME {
 
             return p1 + p2;
         }
-    }
-
-    public static long lcm(long a, long b) {
-        return (a / gcd(a, b)) * b;
     }
 
     public static long gcd(long a, long b) {

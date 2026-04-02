@@ -4,7 +4,7 @@ import java.lang.*;
 import java.io.*;
 import static java.lang.Math.*;
 
-public class CLASS_NAME {
+public class C_1_A_Simple_GCD_Problem_Easy_Version {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         PrintWriter pw = new PrintWriter(System.out);
@@ -17,6 +17,46 @@ public class CLASS_NAME {
          * Suffix sum can be calculated using TotalSum - CurrentPrefixSum
          * Thinking in number lines can be helpful
          * If there is monoticity -> Binary Search may prove useful
+         * 
+         * 
+         * we have two arrays a and b of length n, ai = bi 
+         * 
+         * choose some integer m != ai, ai = m (we can peform this operation for each index at most once)
+         * m  is from (1, bi) but bi = ai 
+         * 
+         * the following has to hold:
+         *  gcd for all subarrays is the same in both 
+         * 
+         * We have to determine the maximum number of operations that can be performed while ensuring that this condition remaisn satisfied 
+         * 
+         * gcd(a1, a2, a3) = gcd(gcd(a1, a2), gcd(a2, a3))
+         * 
+         * So if we can just care about the adjacent pairs then we're probably sorted 
+         * 
+         * 1 2 3 4 5 6 7 
+         * 
+         * gcd array = 1 1 1 1 1 1 
+         *  
+         * 
+         * maximum number of operations == maximum number of indices we can change 
+         * 
+         * let's look at some element ai 
+         * it's part of two adjacent pairs 
+         * ai-1 - ai - ai+1
+         * 
+         * it must maintain the left GCD and the right GCD gLeft, gRight
+         * 
+         * if we change ai to ai'
+         * gcd(ai-1, ai') = gcd(ai-1, ai) = gLeft
+         * therefore ai' must be a multiple of gLeft 
+         * 
+         * thus it also has to be a multiple of gRight
+         * 
+         * since it has to be both a common muliplt of gLeft, and gRight we can take lcm(gLeft, gRight)
+         * 
+         * g[i] = gcd(ai-1,ai)
+         * so g[i - 1] = gLeft
+         * g[i] = gRight
          */
         test: 
         while (t-- > 0) {
@@ -27,6 +67,31 @@ public class CLASS_NAME {
             for (int i = 0; i < n; i++) {
                 long val = Long.parseLong(st.nextToken());
                 a.add(val);
+            }
+            st = new StringTokenizer(br.readLine());
+            long[] g = new long[n - 1];
+            for (int i = 0; i < n - 1; i++) {
+               g[i] = gcd(a.get(i), a.get(i + 1)); 
+            }
+            
+            int ans = 0;
+
+            if (a.get(0) > g[0]) {
+                ans++;
+            }
+
+            for (int i = 1; i < n - 1; i++) {
+                long gLeft = g[i - 1];
+                long gRight = g[i];
+
+                long lcm = lcm(gLeft, gRight);
+                if (a.get(i) > lcm) {
+                    ans++;
+                }
+            }
+
+            if (a.get(n - 1) > g[n - 2]) {
+                ans++;
             }
         }
         pw.flush();

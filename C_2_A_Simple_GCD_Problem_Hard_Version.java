@@ -4,7 +4,7 @@ import java.lang.*;
 import java.io.*;
 import static java.lang.Math.*;
 
-public class CLASS_NAME {
+public class C_2_A_Simple_GCD_Problem_Hard_Version {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         PrintWriter pw = new PrintWriter(System.out);
@@ -17,6 +17,18 @@ public class CLASS_NAME {
          * Suffix sum can be calculated using TotalSum - CurrentPrefixSum
          * Thinking in number lines can be helpful
          * If there is monoticity -> Binary Search may prove useful
+         * 
+         * Difference between two problems is that we have six seconds now 
+         * also bi is not necessarily = ai 
+         * 
+         * 
+         * so now m = [1, bi] 
+         * 
+         * a = [1   2 3  4  5 6 7]
+         * b = [100 6 12 20 5 2 7]
+         * 
+         * gcd array = [1, 1, 1, 1, 1, 1]
+         * 
          */
         test: 
         while (t-- > 0) {
@@ -27,6 +39,18 @@ public class CLASS_NAME {
             for (int i = 0; i < n; i++) {
                 long val = Long.parseLong(st.nextToken());
                 a.add(val);
+            }
+
+            st = new StringTokenizer(br.readLine());
+            List<Long> b = new ArrayList<>();
+            for (int i = 0; i < n; i++) {
+                long val = Long.parseLong(st.nextToken());
+                b.add(val);
+            }
+
+            long[] g = new long[n - 1];
+            for (int i = 0; i < n - 1; i++) {
+               g[i] = gcd(a.get(i), a.get(i + 1)); 
             }
         }
         pw.flush();

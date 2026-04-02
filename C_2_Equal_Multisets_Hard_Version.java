@@ -4,7 +4,7 @@ import java.lang.*;
 import java.io.*;
 import static java.lang.Math.*;
 
-public class CLASS_NAME {
+public class C_2_Equal_Multisets_Hard_Version {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         PrintWriter pw = new PrintWriter(System.out);
@@ -17,17 +17,116 @@ public class CLASS_NAME {
          * Suffix sum can be calculated using TotalSum - CurrentPrefixSum
          * Thinking in number lines can be helpful
          * If there is monoticity -> Binary Search may prove useful
+         * 
+         * Same as previous problem, now arary is aribtrary instead, maybe sliding window still works(?)
+         * 
+         * So now it's no more a permutation :(((())))
+         * 
+         * Let us look at the sliding window once again 
+         * 
+         * let's say the one leaving the window and entering the window are different avlues 
+         * ai != ai+k
+         * 
+         * Then the one leaving b's window, and entering b's window must also be the same to hold the property 
+         * 
+         * bi = ai, bi+k = ai+k (or -1 since it's flexible)
+         * 
+         * Array a still holds integers from 1 -> n, that's pretty neat 
+         * 
+         * now what if the entering and exiting values are the same ?? 
+         * 
+         * then bi == bi+k
+         * 
+         * 
          */
         test: 
         while (t-- > 0) {
             st = new StringTokenizer(br.readLine());
             int n = Integer.parseInt(st.nextToken());
+            int k = Integer.parseInt(st.nextToken());
             List<Long> a = new ArrayList<>();
             st = new StringTokenizer(br.readLine());
             for (int i = 0; i < n; i++) {
                 long val = Long.parseLong(st.nextToken());
                 a.add(val);
             }
+            List<Long> b = new ArrayList<>();
+            st = new StringTokenizer(br.readLine());
+            for (int i = 0; i < n; i++) {
+                long val = Long.parseLong(st.nextToken());
+                b.add(val);
+            }
+
+            boolean flag = true;
+
+            //First checking which positions have the same value to make the chains
+            for (int c = 0; c < k; c++) {
+                boolean allSame = true;
+
+                long firstVal = a.get(c);
+
+                for (int i = c + k; i < n; i+=k) {
+                    if (!a.get(i).equals(firstVal)) {
+                        allSame = false;
+                        break;
+                    } 
+                }
+
+                if (!allSame) {
+                    for (int i = c; i < n; i+=k) {
+                        if (b.get(i) != -1L && !b.get(i).equals(a.get(i))) {
+                            flag = false;
+                            break;
+                        } 
+                        b.set(i, a.get(i));
+                    }
+                } else {
+                    long reqB = -1;
+
+                    for (int i = c; i < n; i+=k) {
+                        if (b.get(i) != -1L) {
+                            if (reqB == -1L) {
+                                reqB = b.get(i);
+                            } else if (reqB != b.get(i)) {
+                                flag = false;
+                                break;
+                            }
+                        } 
+                    }
+
+                    if (reqB != -1L) {
+                        for (int i = c; i < n; i+=k) {
+                            b.set(i, reqB); 
+                        }
+                    }
+
+                }
+            } 
+            
+            //secondly validating the first window 
+
+            if(flag) {
+                int[] freqA = new int[n + 1];
+
+                for (int i = 0; i < k; i++) {
+                    freqA[a.get(i).intValue()]++;
+                }
+
+                for (int i = 0; i < k; i++) {
+                    if (b.get(i) != -1L) {
+                        if (freqA[b.get(i).intValue()] == 0) {
+                            flag = false;
+                            break; 
+                        }
+                    freqA[b.get(i).intValue()]--;
+                    }
+                }
+            }
+
+            if (flag) {
+                pw.println("YES");
+            }
+            else pw.println("NO");
         }
         pw.flush();
         pw.close();
@@ -113,10 +212,6 @@ public class CLASS_NAME {
 
             return p1 + p2;
         }
-    }
-
-    public static long lcm(long a, long b) {
-        return (a / gcd(a, b)) * b;
     }
 
     public static long gcd(long a, long b) {

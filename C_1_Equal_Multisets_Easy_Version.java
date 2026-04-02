@@ -4,7 +4,7 @@ import java.lang.*;
 import java.io.*;
 import static java.lang.Math.*;
 
-public class CLASS_NAME {
+public class C_1_Equal_Multisets_Easy_Version {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         PrintWriter pw = new PrintWriter(System.out);
@@ -17,17 +17,82 @@ public class CLASS_NAME {
          * Suffix sum can be calculated using TotalSum - CurrentPrefixSum
          * Thinking in number lines can be helpful
          * If there is monoticity -> Binary Search may prove useful
+         * 
+         * array a is a permutation 
+         * 
+         * We have a parameter k
+         * 
+         * Array b is called cool if the following conditions hold:
+         *  - all subarrays of size (k - i + 1) from a is a rearrangement of the same sized subarray in b 
+         * 
+         * for each i from k -> n 
+         *
+         * Array b contains integers from 1 -> n and some -1s
+         * 
+         * We have to determine if it is possible to replace all -1 in b with an integer from 1 to n such that b is cool 
+         * with respect to k
+         * 
+         * Some sliding window technique maybe ? 
+         * 
+         * Permutation a, means every element is distinct. 
+         * 
+         * Let's say we have a sliding window in both arrays sliding 
+         * 
+         * Now, a has to be some rearrangement from b's sliding window
+         * so if we slide that window, the leaving element both have to be the same, and the entering element too. 
+         * 
+         * So basicaly whilst sliding the window we check for the leaving and entering values 
+         * 
+         * 
+         *  
          */
         test: 
         while (t-- > 0) {
             st = new StringTokenizer(br.readLine());
             int n = Integer.parseInt(st.nextToken());
+            int k = Integer.parseInt(st.nextToken());
             List<Long> a = new ArrayList<>();
             st = new StringTokenizer(br.readLine());
             for (int i = 0; i < n; i++) {
                 long val = Long.parseLong(st.nextToken());
                 a.add(val);
             }
+            List<Long> b = new ArrayList<>();
+            st = new StringTokenizer(br.readLine());
+            for (int i = 0; i < n; i++) {
+                long val = Long.parseLong(st.nextToken());
+                b.add(val);
+            }
+            boolean flag = true;
+            for (int i = 0; i < n; i++) {
+                if (i < n - k || i >= k) {
+                    if (b.get(i) != -1L && !b.get(i).equals(a.get(i))) {
+                        flag = false;
+                        break;
+                    }
+                    b.set(i, a.get(i));
+                }
+            }
+
+            if (flag) {
+                boolean[] used = new boolean[n + 1];
+                for (int i = 0; i < n; i++) {
+                    long val = b.get(i);
+
+                    if (val != -1) {
+                        if (used[(int) val]) {
+                            flag = false;
+                            break;
+                        }
+                        used[(int) val] = true;
+                    }
+                }
+            }
+
+            if (flag) {
+                pw.println("YES");
+            }
+            else pw.println("NO");
         }
         pw.flush();
         pw.close();
@@ -113,10 +178,6 @@ public class CLASS_NAME {
 
             return p1 + p2;
         }
-    }
-
-    public static long lcm(long a, long b) {
-        return (a / gcd(a, b)) * b;
     }
 
     public static long gcd(long a, long b) {

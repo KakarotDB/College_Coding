@@ -4,7 +4,7 @@ import java.lang.*;
 import java.io.*;
 import static java.lang.Math.*;
 
-public class CLASS_NAME {
+public class B_Simply_Sitting_on_Chairs {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         PrintWriter pw = new PrintWriter(System.out);
@@ -17,6 +17,34 @@ public class CLASS_NAME {
          * Suffix sum can be calculated using TotalSum - CurrentPrefixSum
          * Thinking in number lines can be helpful
          * If there is monoticity -> Binary Search may prove useful
+         * 
+         * Another permutation p of length n 
+         * 
+         * n chairs in a row initiall all unmarked
+         * 
+         * Playing a game, we go sequentially from the 1st chair
+         * 
+         * At ith chair : 
+         *  If ith chair is already marked, we end the game immediately without sitting on it 
+         *  We can choose to sit or skip and move to next 
+         *  IF we sit on chair, then after standing up, we mark pith chair and move to next chair 
+         *  
+         * 
+         * Determine the maximum number of chairs we can sit on 
+         * 
+         * 4 3 2 5 1 
+         * 
+         * We can either choose to sit, or skip
+         *
+         * If early on we sit on a chair with a larger pi, then we can't sit on it later on 
+         * pi > i -> means we can't visit pi chair later on 
+         * 
+         * pi < i -> means we are marking a chair we can't visit that we already visited 
+         * 
+         * so just count the number of chairs wher pi <= i + 1
+         * 
+         * 
+         * 5 3 2 1 4
          */
         test: 
         while (t-- > 0) {
@@ -28,6 +56,16 @@ public class CLASS_NAME {
                 long val = Long.parseLong(st.nextToken());
                 a.add(val);
             }
+
+            int ans = 0;
+            
+            for (int i = 0; i < n; i++) {
+                if (a.get(i) <= i + 1) {
+                    ans++;
+                }
+            }
+
+            pw.println(ans);
         }
         pw.flush();
         pw.close();
@@ -113,10 +151,6 @@ public class CLASS_NAME {
 
             return p1 + p2;
         }
-    }
-
-    public static long lcm(long a, long b) {
-        return (a / gcd(a, b)) * b;
     }
 
     public static long gcd(long a, long b) {

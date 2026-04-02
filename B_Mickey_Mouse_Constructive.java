@@ -4,7 +4,7 @@ import java.lang.*;
 import java.io.*;
 import static java.lang.Math.*;
 
-public class CLASS_NAME {
+public class B_Mickey_Mouse_Constructive {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         PrintWriter pw = new PrintWriter(System.out);
@@ -17,17 +17,94 @@ public class CLASS_NAME {
          * Suffix sum can be calculated using TotalSum - CurrentPrefixSum
          * Thinking in number lines can be helpful
          * If there is monoticity -> Binary Search may prove useful
+         * 
+         * let f(a) be the number of ways to partition a into one or more subarrays such that:
+         * 
+         * - Each element appears in exactly one subarray 
+         * - All subarrays have the same sum 
+         * 
+         * a = [1 1] f(a) = 2
+         * 
+         * We have two integers x and y. Find min(f(a)) 
+         * over all arrays a of length x + y, consisting of x copies of the number 1, and y copies of the number -1 in some order. 
+         * 
+         * Output answer % 676767677
+         * 
+         * Construct one array that achieves this minimal value 
+         * 
+         * 
+         * x -> #1
+         * y -> #-1 
+         * 
+         * x = 2, y = 0
+         * 
+         * min(f(a)) = 2
+         * 
+         * 1 1 
+         * 
+         * x = 1, y = 1
+         * 
+         * x = 2 y = 2
+         * 
+         * 1 -1 1 -1 
+         * 
+         * 
+         * Let us try rephrasing the problem 
+         * It basically asks us to slice up the array without leaving any number behinds and without reusing any numbers 
+         * 
+         * f(a) is basically the total number of ways we can slice the array into contiguous blocks such that every single block has the same sum.
+         * 
+         * Same sum? Maybe prefix sum ? 
+         * 
+         * S = x - y 
+         * 
+         * x = 3, y = 3
+         * S = 0 
+         * 
+         * 1 1 1 -1 -1 -1 -1
+         * 
+         * Some observations : 
+         *  look at the divisors of x - y 
+         * 
+         *  x = 5, y = 1, x - y = 4
+         *  1 1 1 1 1 -1 -> 3 divisors of 4
          */
         test: 
         while (t-- > 0) {
             st = new StringTokenizer(br.readLine());
-            int n = Integer.parseInt(st.nextToken());
-            List<Long> a = new ArrayList<>();
-            st = new StringTokenizer(br.readLine());
-            for (int i = 0; i < n; i++) {
-                long val = Long.parseLong(st.nextToken());
-                a.add(val);
+            int x = Integer.parseInt(st.nextToken());
+            int y = Integer.parseInt(st.nextToken());
+            
+            if(x == y) {
+                pw.println(1);
+                for (int i = 0; i < x; i++) {
+                    pw.print(1 + " ");
+                }
+                for (int i = 0; i < y; i++) {
+                    pw.print(-1 + " ");
+                }
+                pw.println();
+                continue;
             }
+            int s = abs(x - y);
+            int count = 0;
+            for (int i = 1; i * i <= s; i++) {
+                 if (s % i == 0) {
+                    count++;
+                    if (s/i != i) {
+                        count++;
+                    }
+                 }
+            }
+
+            pw.println(count);
+            for (int i = 0; i < x; i++) {
+                pw.print(1 + " ");
+            }
+            for (int i = 0; i < y; i++) {
+                pw.print(-1 + " ");
+            }
+            pw.println();
         }
         pw.flush();
         pw.close();
@@ -113,10 +190,6 @@ public class CLASS_NAME {
 
             return p1 + p2;
         }
-    }
-
-    public static long lcm(long a, long b) {
-        return (a / gcd(a, b)) * b;
     }
 
     public static long gcd(long a, long b) {

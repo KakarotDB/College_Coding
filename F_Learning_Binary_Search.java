@@ -4,7 +4,7 @@ import java.lang.*;
 import java.io.*;
 import static java.lang.Math.*;
 
-public class CLASS_NAME {
+public class F_Learning_Binary_Search {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         PrintWriter pw = new PrintWriter(System.out);
@@ -17,17 +17,23 @@ public class CLASS_NAME {
          * Suffix sum can be calculated using TotalSum - CurrentPrefixSum
          * Thinking in number lines can be helpful
          * If there is monoticity -> Binary Search may prove useful
+         * 
+         * so basically, if a does not contain k then we return 0 
+         * otherwise it's just normal binary search 
+         * 
+         * f(a, k, l , r)
+         * we are interested in finding the sum of 
+         * f(a, 1, 1, n) + f(a, 2, 1, n) + ... + f(a, m, 1, n);
+         * so k goes from [1, m]
+         * 
+         * 
          */
         test: 
         while (t-- > 0) {
             st = new StringTokenizer(br.readLine());
             int n = Integer.parseInt(st.nextToken());
-            List<Long> a = new ArrayList<>();
-            st = new StringTokenizer(br.readLine());
-            for (int i = 0; i < n; i++) {
-                long val = Long.parseLong(st.nextToken());
-                a.add(val);
-            }
+            int m = Integer.parseInt(st.nextToken());
+            
         }
         pw.flush();
         pw.close();
@@ -113,10 +119,6 @@ public class CLASS_NAME {
 
             return p1 + p2;
         }
-    }
-
-    public static long lcm(long a, long b) {
-        return (a / gcd(a, b)) * b;
     }
 
     public static long gcd(long a, long b) {

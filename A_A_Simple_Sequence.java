@@ -4,7 +4,7 @@ import java.lang.*;
 import java.io.*;
 import static java.lang.Math.*;
 
-public class CLASS_NAME {
+public class A_A_Simple_Sequence {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         PrintWriter pw = new PrintWriter(System.out);
@@ -17,17 +17,26 @@ public class CLASS_NAME {
          * Suffix sum can be calculated using TotalSum - CurrentPrefixSum
          * Thinking in number lines can be helpful
          * If there is monoticity -> Binary Search may prove useful
+         * 
+         * a1 mod a2 > a2 mod a3 >= an-1 mod an 
+         * 
+         * 5 4 3 2 1 
+         * 
+         * 5 % 4 = 1
+         * 4 % 3 =1
+         * 
+         * 1 5 4 3 2
+         * 
          */
         test: 
         while (t-- > 0) {
             st = new StringTokenizer(br.readLine());
             int n = Integer.parseInt(st.nextToken());
-            List<Long> a = new ArrayList<>();
-            st = new StringTokenizer(br.readLine());
-            for (int i = 0; i < n; i++) {
-                long val = Long.parseLong(st.nextToken());
-                a.add(val);
+            pw.print(1 + " ");
+            for (int i = 1; i < n; i++) {
+                pw.print((n - i + 1) + " ");
             }
+            pw.println();
         }
         pw.flush();
         pw.close();
@@ -113,10 +122,6 @@ public class CLASS_NAME {
 
             return p1 + p2;
         }
-    }
-
-    public static long lcm(long a, long b) {
-        return (a / gcd(a, b)) * b;
     }
 
     public static long gcd(long a, long b) {

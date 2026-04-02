@@ -4,7 +4,7 @@ import java.lang.*;
 import java.io.*;
 import static java.lang.Math.*;
 
-public class CLASS_NAME {
+public class A_Antimedian_Deletion {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         PrintWriter pw = new PrintWriter(System.out);
@@ -17,6 +17,20 @@ public class CLASS_NAME {
          * Suffix sum can be calculated using TotalSum - CurrentPrefixSum
          * Thinking in number lines can be helpful
          * If there is monoticity -> Binary Search may prove useful
+         * 
+         * We have permutation of size n 
+         * 
+         * operation:
+         *  Choose subarray of size 3 -> delete either smallest/largest 
+         * 
+         * For each i from 1 -> n, find the minimum length of an obtainable array that contains the number pi
+         * This has to be solved independently for each index i 
+         * 
+         * n = 5 
+         * 
+         * 1 2 3 4 5 
+         * 5 3 1 2 4
+         * 
          */
         test: 
         while (t-- > 0) {
@@ -28,6 +42,15 @@ public class CLASS_NAME {
                 long val = Long.parseLong(st.nextToken());
                 a.add(val);
             }
+            if (n == 1) {
+                pw.println(1);
+                continue;
+            }
+
+            for (int i = 0; i < n; i++) {
+                pw.print(2 + " ");
+            }
+            pw.println();
         }
         pw.flush();
         pw.close();
@@ -113,10 +136,6 @@ public class CLASS_NAME {
 
             return p1 + p2;
         }
-    }
-
-    public static long lcm(long a, long b) {
-        return (a / gcd(a, b)) * b;
     }
 
     public static long gcd(long a, long b) {
