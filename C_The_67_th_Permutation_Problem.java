@@ -4,108 +4,35 @@ import java.lang.*;
 import java.io.*;
 import static java.lang.Math.*;
 
-public class C_2_A_Simple_GCD_Problem_Hard_Version {
+public class C_The_67_th_Permutation_Problem {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         PrintWriter pw = new PrintWriter(System.out);
         StringTokenizer st = new StringTokenizer("");
-        
-        String line = br.readLine();
-        if(line == null) return;
-        int t = Integer.parseInt(line.trim());
-        
+        int t = Integer.parseInt(br.readLine());
+        /*
+         * Note
+         * If there is some cyclic shifts with a string s:
+         * s += s can help in simplifying the problem
+         * Suffix sum can be calculated using TotalSum - CurrentPrefixSum
+         * Thinking in number lines can be helpful
+         * If there is monoticity -> Binary Search may prove useful
+         * 
+         * 1 3 4 2 5 6 
+         * 
+         * 1 9 8 2 7 6 3 5 4
+         */
         test: 
         while (t-- > 0) {
             st = new StringTokenizer(br.readLine());
             int n = Integer.parseInt(st.nextToken());
-            
-            List<Long> a = new ArrayList<>();
-            st = new StringTokenizer(br.readLine());
-            for (int i = 0; i < n; i++) {
-                a.add(Long.parseLong(st.nextToken()));
+            int left = 1;
+            int right = 3 * n;
+
+            while(left <= right) {
+                pw.print(left + " " + (right) + " " + (right - 1));
             }
-
-            st = new StringTokenizer(br.readLine());
-            List<Long> b = new ArrayList<>();
-            for (int i = 0; i < n; i++) {
-                b.add(Long.parseLong(st.nextToken()));
-            }
-
-            long[] c = new long[n];
-            
-            for(int i = 0; i < n; i++) {
-                if(i == 0) c[i] = gcd(a.get(i), a.get(i + 1));
-                else if(i == n - 1) c[i] = gcd(a.get(i - 1), a.get(i));
-                else c[i] = lcm(gcd(a.get(i), a.get(i - 1)), gcd(a.get(i), a.get(i + 1)));
-                
-                if(c[i] > b.get(i)) c[i] = a.get(i); 
-            }
-
-            long[] primes = new long[] {1, 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73};
-            int psize = primes.length;
-
-            long[][] dp = new long[n][psize];
-            
-            
-            // base cases
-            for (int i = 0; i < psize; i++) {
-                if (i == 0) {
-                    if(c[0] == a.get(0)) dp[0][0] = 0;
-                    else dp[0][0] = 1;
-                    continue;
-                }
-
-                long val = c[0] * primes[i];
-
-                if(val <= b.get(0) && gcd(val, c[1]) == gcd(a.get(0), a.get(1)) && val != a.get(0)) {
-                    dp[0][i] = 1;
-                }
-            }
-
-            // transitions
-            for (int i = 1; i < n; i++) {
-                long currentA = a.get(i);
-                long prevA = a.get(i - 1);
-                long maxB = b.get(i);
-                long reqGcdPrev = gcd(currentA, prevA);
-                long reqGcdNext = (i < n - 1) ? gcd(currentA, a.get(i + 1)) : 0;
-                long currentC = c[i];
-                long prevC = c[i - 1];
-                long nextC = (i < n - 1) ? c[i + 1] : 0;
-
-                for (int j = 0; j < psize; j++) {
-                    if (j == 0) {
-                        boolean isSame = (currentC == currentA);
-                        for (int k = 0; k < psize; k++) {
-                            if (isSame) {
-                                dp[i][j] = Math.max(dp[i - 1][k], dp[i][j]);
-                            } else {
-                                dp[i][j] = Math.max(dp[i - 1][k] + 1, dp[i][j]);
-                            }
-                        }
-                        continue;
-                    }
-
-                    long val1 = currentC * primes[j];
-
-                    if (val1 > maxB || val1 == currentA) continue;
-                    if (i < n - 1 && gcd(val1, nextC) != reqGcdNext) continue;
-
-                    for (int k = 0; k < psize; k++) {
-                        long val2 = prevC * primes[k];
-
-                        if (gcd(val1, val2) == reqGcdPrev) {
-                            dp[i][j] = Math.max(dp[i][j], dp[i - 1][k] + 1);
-                        }
-                    }
-                }
-            } 
-            
-            long ans = 0;
-            for (int j = 0; j < psize; j++) {
-                ans = Math.max(ans, dp[n - 1][j]);
-            }
-            pw.println(ans);
+            pw.println();
         }
         pw.flush();
         pw.close();

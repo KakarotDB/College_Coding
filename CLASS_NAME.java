@@ -5,11 +5,28 @@ import java.io.*;
 import static java.lang.Math.*;
 
 public class CLASS_NAME {
+    
+    //list of first 20 primes whose product > 1e18
+    static long[] primes = new long[]  {1, 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73};
+    static final long MOD = 0;
+    // Moved to static class level
+    static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    static PrintWriter pw = new PrintWriter(System.out);
+    static StringTokenizer st = new StringTokenizer("");
+
     public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        PrintWriter pw = new PrintWriter(System.out);
-        StringTokenizer st = new StringTokenizer("");
         int t = Integer.parseInt(br.readLine());
+        
+        while (t-- > 0) {
+            solve();
+        }
+        
+        pw.flush();
+        pw.close();
+        br.close();
+    }
+
+    public static void solve() throws IOException {
         /*
          * Note
          * If there is some cyclic shifts with a string s:
@@ -17,21 +34,20 @@ public class CLASS_NAME {
          * Suffix sum can be calculated using TotalSum - CurrentPrefixSum
          * Thinking in number lines can be helpful
          * If there is monoticity -> Binary Search may prove useful
+         * For any RBS (Regular Bracket Sequence) of length n 
+         * Thre has to be n/2 '(' and ')'
+         * if  '(' = + 1 and ')' = -1
+         * then prefix sum >= 0 at each point 
          */
-        test: 
-        while (t-- > 0) {
-            st = new StringTokenizer(br.readLine());
-            int n = Integer.parseInt(st.nextToken());
-            List<Long> a = new ArrayList<>();
-            st = new StringTokenizer(br.readLine());
-            for (int i = 0; i < n; i++) {
-                long val = Long.parseLong(st.nextToken());
-                a.add(val);
-            }
+        st = new StringTokenizer(br.readLine());
+        int n = Integer.parseInt(st.nextToken());
+        List<Long> a = new ArrayList<>();
+        st = new StringTokenizer(br.readLine());
+        for (int i = 0; i < n; i++) {
+            long val = Long.parseLong(st.nextToken());
+            a.add(val);
         }
-        pw.flush();
-        pw.close();
-        br.close();
+
     }
 
     public static class SegmentTree {
@@ -113,6 +129,25 @@ public class CLASS_NAME {
 
             return p1 + p2;
         }
+    }
+
+    // Fast exponentiation to calculate (base^exp) % mod
+    public static long power(long base, long exp) {
+        long res = 1;
+        base = base % MOD;
+        while (exp > 0) {
+            if (exp % 2 == 1) {
+                res = (res * base) % MOD;
+            }
+            base = (base * base) % MOD;
+            exp /= 2;
+        }
+        return res;
+    }
+
+    // Finds the modular inverse using Fermat's Little Theorem
+    public static long modInverse(long n) {
+        return power(n, MOD - 2);
     }
 
     public static long lcm(long a, long b) {

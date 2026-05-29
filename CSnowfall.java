@@ -4,113 +4,82 @@ import java.lang.*;
 import java.io.*;
 import static java.lang.Math.*;
 
-public class C_2_A_Simple_GCD_Problem_Hard_Version {
+public class CSnowfall {
+    
+    //list of first 20 primes whose product > 1e18
+    static long[] primes = new long[]  {1, 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73};
+    static final long MOD = 0;
+    // Moved to static class level
+    static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    static PrintWriter pw = new PrintWriter(System.out);
+    static StringTokenizer st = new StringTokenizer("");
+
     public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        PrintWriter pw = new PrintWriter(System.out);
-        StringTokenizer st = new StringTokenizer("");
+        int t = Integer.parseInt(br.readLine());
         
-        String line = br.readLine();
-        if(line == null) return;
-        int t = Integer.parseInt(line.trim());
-        
-        test: 
         while (t-- > 0) {
-            st = new StringTokenizer(br.readLine());
-            int n = Integer.parseInt(st.nextToken());
-            
-            List<Long> a = new ArrayList<>();
-            st = new StringTokenizer(br.readLine());
-            for (int i = 0; i < n; i++) {
-                a.add(Long.parseLong(st.nextToken()));
-            }
-
-            st = new StringTokenizer(br.readLine());
-            List<Long> b = new ArrayList<>();
-            for (int i = 0; i < n; i++) {
-                b.add(Long.parseLong(st.nextToken()));
-            }
-
-            long[] c = new long[n];
-            
-            for(int i = 0; i < n; i++) {
-                if(i == 0) c[i] = gcd(a.get(i), a.get(i + 1));
-                else if(i == n - 1) c[i] = gcd(a.get(i - 1), a.get(i));
-                else c[i] = lcm(gcd(a.get(i), a.get(i - 1)), gcd(a.get(i), a.get(i + 1)));
-                
-                if(c[i] > b.get(i)) c[i] = a.get(i); 
-            }
-
-            long[] primes = new long[] {1, 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73};
-            int psize = primes.length;
-
-            long[][] dp = new long[n][psize];
-            
-            
-            // base cases
-            for (int i = 0; i < psize; i++) {
-                if (i == 0) {
-                    if(c[0] == a.get(0)) dp[0][0] = 0;
-                    else dp[0][0] = 1;
-                    continue;
-                }
-
-                long val = c[0] * primes[i];
-
-                if(val <= b.get(0) && gcd(val, c[1]) == gcd(a.get(0), a.get(1)) && val != a.get(0)) {
-                    dp[0][i] = 1;
-                }
-            }
-
-            // transitions
-            for (int i = 1; i < n; i++) {
-                long currentA = a.get(i);
-                long prevA = a.get(i - 1);
-                long maxB = b.get(i);
-                long reqGcdPrev = gcd(currentA, prevA);
-                long reqGcdNext = (i < n - 1) ? gcd(currentA, a.get(i + 1)) : 0;
-                long currentC = c[i];
-                long prevC = c[i - 1];
-                long nextC = (i < n - 1) ? c[i + 1] : 0;
-
-                for (int j = 0; j < psize; j++) {
-                    if (j == 0) {
-                        boolean isSame = (currentC == currentA);
-                        for (int k = 0; k < psize; k++) {
-                            if (isSame) {
-                                dp[i][j] = Math.max(dp[i - 1][k], dp[i][j]);
-                            } else {
-                                dp[i][j] = Math.max(dp[i - 1][k] + 1, dp[i][j]);
-                            }
-                        }
-                        continue;
-                    }
-
-                    long val1 = currentC * primes[j];
-
-                    if (val1 > maxB || val1 == currentA) continue;
-                    if (i < n - 1 && gcd(val1, nextC) != reqGcdNext) continue;
-
-                    for (int k = 0; k < psize; k++) {
-                        long val2 = prevC * primes[k];
-
-                        if (gcd(val1, val2) == reqGcdPrev) {
-                            dp[i][j] = Math.max(dp[i][j], dp[i - 1][k] + 1);
-                        }
-                    }
-                }
-            } 
-            
-            long ans = 0;
-            for (int j = 0; j < psize; j++) {
-                ans = Math.max(ans, dp[n - 1][j]);
-            }
-            pw.println(ans);
+            solve();
         }
+        
         pw.flush();
         pw.close();
         br.close();
     }
+
+    public static void solve() throws IOException {
+        /*
+         * Note
+         * If there is some cyclic shifts with a string s:
+         * s += s can help in simplifying the problem
+         * Suffix sum can be calculated using TotalSum - CurrentPrefixSum
+         * Thinking in number lines can be helpful
+         * If there is monoticity -> Binary Search may prove useful
+         * For any RBS (Regular Bracket Sequence) of length n 
+         * Thre has to be n/2 '(' and ')'
+         * if  '(' = + 1 and ')' = -1
+         * then prefix sum >= 0 at each point 
+         * 
+         * we need to reorder the subarray such that there are minimal subarrays whose
+         * products are divisible by 6
+         * 
+         * So numbers are divisible by 6 if they are divisible by both 2 and 3 
+         * 
+         * so, we can try separating the numbers further away from each other like 
+         * 
+         * [elements divisible by 2] ... [other elements] ... [div by 3] ...[divisible by 6]
+         */
+        st = new StringTokenizer(br.readLine());
+        int n = Integer.parseInt(st.nextToken());
+        List<Long> a = new ArrayList<>();
+        st = new StringTokenizer(br.readLine());
+        for (int i = 0; i < n; i++) {
+            long val = Long.parseLong(st.nextToken());
+            a.add(val);
+        }
+
+        List<Long> div2 = new ArrayList<>();
+        List<Long> div3 = new ArrayList<>();
+        List<Long> div6 = new ArrayList<>();
+        List<Long> rest = new ArrayList<>();
+        for (int i = 0; i < n; i++) {
+            long val = a.get(i);
+            if (val % 2 == 0 && val % 3 != 0) {
+                div2.add(val);
+            }
+            else if (val % 2 != 0 && val % 3 == 0) {
+                div3.add(val);
+            }
+            else if(val % 6 == 0) div6.add(val);
+            else rest.add(val);
+        }
+
+        List<Long> ans = new ArrayList<>();
+        ans.addAll(div2);
+        ans.addAll(rest);
+        ans.addAll(div3);
+        ans.addAll(div6);
+        printArray(ans, pw);
+}
 
     public static class SegmentTree {
         int[] tree;
@@ -191,6 +160,25 @@ public class C_2_A_Simple_GCD_Problem_Hard_Version {
 
             return p1 + p2;
         }
+    }
+
+    // Fast exponentiation to calculate (base^exp) % mod
+    public static long power(long base, long exp) {
+        long res = 1;
+        base = base % MOD;
+        while (exp > 0) {
+            if (exp % 2 == 1) {
+                res = (res * base) % MOD;
+            }
+            base = (base * base) % MOD;
+            exp /= 2;
+        }
+        return res;
+    }
+
+    // Finds the modular inverse using Fermat's Little Theorem
+    public static long modInverse(long n) {
+        return power(n, MOD - 2);
     }
 
     public static long lcm(long a, long b) {
