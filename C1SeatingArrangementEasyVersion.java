@@ -4,11 +4,10 @@ import java.lang.*;
 import java.io.*;
 import static java.lang.Math.*;
 
-public class CLASS_NAME {
-
-    // list of first 20 primes whose product > 1e18
-    static long[] primes = new long[] { 1, 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71,
-            73 };
+public class C1SeatingArrangementEasyVersion {
+    
+    //list of first 20 primes whose product > 1e18
+    static long[] primes = new long[]  {1, 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73};
     static final long MOD = 0;
     // Moved to static class level
     static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -17,11 +16,11 @@ public class CLASS_NAME {
 
     public static void main(String[] args) throws IOException {
         int t = Integer.parseInt(br.readLine());
-
+        
         while (t-- > 0) {
             solve();
         }
-
+        
         pw.flush();
         pw.close();
         br.close();
@@ -35,25 +34,114 @@ public class CLASS_NAME {
          * Suffix sum can be calculated using TotalSum - CurrentPrefixSum
          * Thinking in number lines can be helpful
          * If there is monoticity -> Binary Search may prove useful
-         * For any RBS (Regular Bracket Sequence) of length n
+         * For any RBS (Regular Bracket Sequence) of length n 
          * Thre has to be n/2 '(' and ')'
-         * if '(' = + 1 and ')' = -1
-         * then prefix sum >= 0 at each point
+         * if  '(' = + 1 and ')' = -1
+         * then prefix sum >= 0 at each point 
          * 
          * XOR -> prefix XOR
          * p[i] ^ p[i - 1] = XOR(i, j)
          * a ^ b = c, then
          * a ^ c = b2
+         * 
+         * x tables -> s seats each 
+         * 
+         * three personalities : 
+         * - I ntroverts -> empty table 
+         * - E xtroverts -> non empty table 
+         * - A mbiverts  -> any table 
+         * 
+         * seating happens sequentially one by one 
+         * 
+         * either assign or kick out 
+         * 
+         * maximum number of friends that we can have at the party 
+         * 
+         * once friend is seated, they cannot move, so we have to make sure that they can sit
+         * 
+         * Extroverts and ambiverst don't care which table they sit on
+         * just needs to be non empty 
+         * 
+         * so all the empty tables can be considered as a pool of empty seats 
+         * 
+         * 
+         * let the number of empty tables be j 
+         * total number of people seated so far be k 
+         * 
+         * then, number of non empty tables = (x - j) 
+         * total capacity = (x - j) * s 
+         * 
+         * k people are sitting in these so 
+         * available seats AvalSeats = (x - j) * s - k 
+         * 
+         * so let us use dp 
+         * 
+         * dp[i] represents the maximum number of people that can be seated given i empty tables remaining
+         * 
+         * dp[1] -> 1 empty table remaining 
+         * dp[x] -> x empty tables remaining 
+         * 
+         * So now, for each friend in the line we look at every possible state dp[i] and decide 
+         * - skip them, state remains same 
+         * - I -> can only sit if i > 0. Uses 1 empty table 
+         * - E -> AvalSeats > 0 0 empty tables used 
+         * - A -> whichever valid 
+         * 
+         * 
+         * 
+         * 
+         * 
+         * 
          */
         st = new StringTokenizer(br.readLine());
         int n = Integer.parseInt(st.nextToken());
-        List<Long> a = new ArrayList<>();
-        st = new StringTokenizer(br.readLine());
+        int x = Integer.parseInt(st.nextToken());
+        int s = Integer.parseInt(st.nextToken());
+
+        String u = br.readLine();
+
+        int[] dp = new int[x + 1];
+        Arrays.fill(dp, -1);
+
+        dp[x] = 0;
+
         for (int i = 0; i < n; i++) {
-            long val = Long.parseLong(st.nextToken());
-            a.add(val);
+            char c = u.charAt(i);
+
+            int[] nextdp = new int[x + 1];
+            Arrays.fill(nextdp, -1);
+            for (int j = 0; j <= x; j++) {
+                if (dp[j] == -1) {
+                    continue;
+                }
+
+                int k = dp[j];
+
+                int avalSeats = (x - j) * s - k;
+
+                nextdp[j] = Math.max(nextdp[j], k);
+
+                if (c == 'I') {
+                    if(j > 0) nextdp[j - 1] = Math.max(nextdp[j - 1], k + 1);
+                } else if (c == 'E') {
+                    if (avalSeats > 0) {
+                        nextdp[j] = max(nextdp[j], k + 1);
+                    }
+                }
+                else if (c == 'A') {
+                    if(j > 0) nextdp[j - 1] = max(nextdp[j - 1], k + 1);
+                    if(avalSeats > 0) nextdp[j] = max(nextdp[j], k + 1);
+                }
+            }
+            dp = nextdp;
+        }
+        int max = 0;
+        for (int i = 0; i <= x; i++) {
+            max = max(max, dp[i]);
         }
 
+        pw.println(max);
+        
     }
 
     public static class SegmentTree {
@@ -134,65 +222,6 @@ public class CLASS_NAME {
             int p2 = query(2 * node + 1, mid + 1, end, l, r);
 
             return p1 + p2;
-        }
-    }
-
-    public static class InversionCounter {
-
-        private static long mergeAndCount(int[] arr, int[] temp, int left, int mid, int right) {
-            int i = left; // Pointer for left subarray
-            int j = mid + 1; // Pointer for right subarray
-            int k = left; // Pointer for merged array
-            long invCount = 0;
-
-            // Merge the two halves while counting inversions
-            while (i <= mid && j <= right) {
-                if (arr[i] <= arr[j]) {
-                    temp[k++] = arr[i++];
-                } else {
-                    // The core logic: arr[i] > arr[j]
-                    // Everything from i to mid is strictly greater than arr[j]
-                    temp[k++] = arr[j++];
-                    invCount += (mid - i + 1);
-                }
-            }
-
-            // Copy any remaining elements from the left subarray
-            while (i <= mid) {
-                temp[k++] = arr[i++];
-            }
-
-            // Copy any remaining elements from the right subarray
-            while (j <= right) {
-                temp[k++] = arr[j++];
-            }
-
-            // Transfer the sorted elements back to the original array
-            for (i = left; i <= right; i++) {
-                arr[i] = temp[i];
-            }
-
-            return invCount;
-        }
-
-        // Recursive merge sort function
-        private static long mergeSortAndCount(int[] arr, int[] temp, int left, int right) {
-            long invCount = 0;
-            if (left < right) {
-                int mid = left + (right - left) / 2;
-
-                invCount += mergeSortAndCount(arr, temp, left, mid);
-                invCount += mergeSortAndCount(arr, temp, mid + 1, right);
-                invCount += mergeAndCount(arr, temp, left, mid, right);
-            }
-            return invCount;
-        }
-
-        // Wrapper function to initialize the temporary array
-        public static long countInversions(int[] arr) {
-            // initializing temp here ONCE to save memory and time
-            int[] temp = new int[arr.length];
-            return mergeSortAndCount(arr, temp, 0, arr.length - 1);
         }
     }
 

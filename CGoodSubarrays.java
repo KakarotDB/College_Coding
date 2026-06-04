@@ -4,11 +4,10 @@ import java.lang.*;
 import java.io.*;
 import static java.lang.Math.*;
 
-public class CLASS_NAME {
-
-    // list of first 20 primes whose product > 1e18
-    static long[] primes = new long[] { 1, 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71,
-            73 };
+public class CGoodSubarrays {
+    
+    //list of first 20 primes whose product > 1e18
+    static long[] primes = new long[]  {1, 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73};
     static final long MOD = 0;
     // Moved to static class level
     static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -17,11 +16,11 @@ public class CLASS_NAME {
 
     public static void main(String[] args) throws IOException {
         int t = Integer.parseInt(br.readLine());
-
+        
         while (t-- > 0) {
             solve();
         }
-
+        
         pw.flush();
         pw.close();
         br.close();
@@ -35,10 +34,10 @@ public class CLASS_NAME {
          * Suffix sum can be calculated using TotalSum - CurrentPrefixSum
          * Thinking in number lines can be helpful
          * If there is monoticity -> Binary Search may prove useful
-         * For any RBS (Regular Bracket Sequence) of length n
+         * For any RBS (Regular Bracket Sequence) of length n 
          * Thre has to be n/2 '(' and ')'
-         * if '(' = + 1 and ')' = -1
-         * then prefix sum >= 0 at each point
+         * if  '(' = + 1 and ')' = -1
+         * then prefix sum >= 0 at each point 
          * 
          * XOR -> prefix XOR
          * p[i] ^ p[i - 1] = XOR(i, j)
@@ -47,13 +46,26 @@ public class CLASS_NAME {
          */
         st = new StringTokenizer(br.readLine());
         int n = Integer.parseInt(st.nextToken());
-        List<Long> a = new ArrayList<>();
-        st = new StringTokenizer(br.readLine());
+
+        char[] nums = br.readLine().toCharArray();
+        long ans = 0; 
+        int[] prefixSum = new int[n];
+        prefixSum[0] = nums[0] - '0';
+
+        for(int i = 1; i < n; i++) {
+            prefixSum[i] = prefixSum[i - 1] + nums[i] - '0';
+        }
+        Map<Integer, Integer> map = new HashMap<>();
+        map.put(0, 1);
         for (int i = 0; i < n; i++) {
-            long val = Long.parseLong(st.nextToken());
-            a.add(val);
+            int val = prefixSum[i] - (i + 1);
+            map.put(val, map.getOrDefault(val, 0) + 1);
+        }
+        for(int f : map.values()) {
+            ans += (long) f * (f - 1) / 2;
         }
 
+        pw.println(ans);
     }
 
     public static class SegmentTree {
@@ -134,65 +146,6 @@ public class CLASS_NAME {
             int p2 = query(2 * node + 1, mid + 1, end, l, r);
 
             return p1 + p2;
-        }
-    }
-
-    public static class InversionCounter {
-
-        private static long mergeAndCount(int[] arr, int[] temp, int left, int mid, int right) {
-            int i = left; // Pointer for left subarray
-            int j = mid + 1; // Pointer for right subarray
-            int k = left; // Pointer for merged array
-            long invCount = 0;
-
-            // Merge the two halves while counting inversions
-            while (i <= mid && j <= right) {
-                if (arr[i] <= arr[j]) {
-                    temp[k++] = arr[i++];
-                } else {
-                    // The core logic: arr[i] > arr[j]
-                    // Everything from i to mid is strictly greater than arr[j]
-                    temp[k++] = arr[j++];
-                    invCount += (mid - i + 1);
-                }
-            }
-
-            // Copy any remaining elements from the left subarray
-            while (i <= mid) {
-                temp[k++] = arr[i++];
-            }
-
-            // Copy any remaining elements from the right subarray
-            while (j <= right) {
-                temp[k++] = arr[j++];
-            }
-
-            // Transfer the sorted elements back to the original array
-            for (i = left; i <= right; i++) {
-                arr[i] = temp[i];
-            }
-
-            return invCount;
-        }
-
-        // Recursive merge sort function
-        private static long mergeSortAndCount(int[] arr, int[] temp, int left, int right) {
-            long invCount = 0;
-            if (left < right) {
-                int mid = left + (right - left) / 2;
-
-                invCount += mergeSortAndCount(arr, temp, left, mid);
-                invCount += mergeSortAndCount(arr, temp, mid + 1, right);
-                invCount += mergeAndCount(arr, temp, left, mid, right);
-            }
-            return invCount;
-        }
-
-        // Wrapper function to initialize the temporary array
-        public static long countInversions(int[] arr) {
-            // initializing temp here ONCE to save memory and time
-            int[] temp = new int[arr.length];
-            return mergeSortAndCount(arr, temp, 0, arr.length - 1);
         }
     }
 

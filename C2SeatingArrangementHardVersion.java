@@ -4,7 +4,7 @@ import java.lang.*;
 import java.io.*;
 import static java.lang.Math.*;
 
-public class CLASS_NAME {
+public class C2SeatingArrangementHardVersion {
 
     // list of first 20 primes whose product > 1e18
     static long[] primes = new long[] { 1, 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71,
@@ -47,13 +47,48 @@ public class CLASS_NAME {
          */
         st = new StringTokenizer(br.readLine());
         int n = Integer.parseInt(st.nextToken());
-        List<Long> a = new ArrayList<>();
-        st = new StringTokenizer(br.readLine());
-        for (int i = 0; i < n; i++) {
-            long val = Long.parseLong(st.nextToken());
-            a.add(val);
-        }
+        int x = Integer.parseInt(st.nextToken());
+        int s = Integer.parseInt(st.nextToken());
+        String u = br.readLine();
 
+        long ans = 0;
+        long movableAmbiverts = 0;
+        long emptySeatsForE = 0;
+
+        for (char c : u.toCharArray()) {
+            if (c == 'I') {
+                if (x > 0) {
+                    x--;
+                    emptySeatsForE += s - 1;
+                    ans++;
+                }
+            } else if (c == 'E') {
+                if (emptySeatsForE > 0) {
+                    emptySeatsForE--;
+                    ans++;
+                } else if (movableAmbiverts > 0 && x > 0) {
+                    movableAmbiverts--;
+                    x--;
+
+                    emptySeatsForE += s - 1;
+                    ans++;
+                }
+            } else {
+                if (emptySeatsForE == 0) {
+                    if (x > 0) {
+                        x--;
+                        emptySeatsForE += s - 1;
+                        ans++;
+                    }
+                } else {
+                    movableAmbiverts++;
+                    emptySeatsForE--;
+                    ans++;
+                }
+            }
+
+        }
+        pw.println(ans);
     }
 
     public static class SegmentTree {
@@ -134,65 +169,6 @@ public class CLASS_NAME {
             int p2 = query(2 * node + 1, mid + 1, end, l, r);
 
             return p1 + p2;
-        }
-    }
-
-    public static class InversionCounter {
-
-        private static long mergeAndCount(int[] arr, int[] temp, int left, int mid, int right) {
-            int i = left; // Pointer for left subarray
-            int j = mid + 1; // Pointer for right subarray
-            int k = left; // Pointer for merged array
-            long invCount = 0;
-
-            // Merge the two halves while counting inversions
-            while (i <= mid && j <= right) {
-                if (arr[i] <= arr[j]) {
-                    temp[k++] = arr[i++];
-                } else {
-                    // The core logic: arr[i] > arr[j]
-                    // Everything from i to mid is strictly greater than arr[j]
-                    temp[k++] = arr[j++];
-                    invCount += (mid - i + 1);
-                }
-            }
-
-            // Copy any remaining elements from the left subarray
-            while (i <= mid) {
-                temp[k++] = arr[i++];
-            }
-
-            // Copy any remaining elements from the right subarray
-            while (j <= right) {
-                temp[k++] = arr[j++];
-            }
-
-            // Transfer the sorted elements back to the original array
-            for (i = left; i <= right; i++) {
-                arr[i] = temp[i];
-            }
-
-            return invCount;
-        }
-
-        // Recursive merge sort function
-        private static long mergeSortAndCount(int[] arr, int[] temp, int left, int right) {
-            long invCount = 0;
-            if (left < right) {
-                int mid = left + (right - left) / 2;
-
-                invCount += mergeSortAndCount(arr, temp, left, mid);
-                invCount += mergeSortAndCount(arr, temp, mid + 1, right);
-                invCount += mergeAndCount(arr, temp, left, mid, right);
-            }
-            return invCount;
-        }
-
-        // Wrapper function to initialize the temporary array
-        public static long countInversions(int[] arr) {
-            // initializing temp here ONCE to save memory and time
-            int[] temp = new int[arr.length];
-            return mergeSortAndCount(arr, temp, 0, arr.length - 1);
         }
     }
 

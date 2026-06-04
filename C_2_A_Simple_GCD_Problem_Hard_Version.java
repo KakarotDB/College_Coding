@@ -24,7 +24,6 @@ public class C_2_A_Simple_GCD_Problem_Hard_Version {
             for (int i = 0; i < n; i++) {
                 a.add(Long.parseLong(st.nextToken()));
             }
-
             st = new StringTokenizer(br.readLine());
             List<Long> b = new ArrayList<>();
             for (int i = 0; i < n; i++) {
