@@ -4,7 +4,7 @@ import java.lang.*;
 import java.io.*;
 import static java.lang.Math.*;
 
-public class CLASS_NAME {
+public class DMaximumPrefixSums {
 
     // list of first 20 primes whose product > 1e18
     static long[] primes = new long[] { 1, 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71,
@@ -39,27 +39,118 @@ public class CLASS_NAME {
          * Thre has to be n/2 '(' and ')'
          * if '(' = + 1 and ')' = -1
          * then prefix sum >= 0 at each point
-         * To reduce the longest subequence of matched pairs of rbs 
-         * we can reduce the maximum matched pairs 
-         * now
-         * Let maximum matched pairs be M
-         * M = min (count of '(' in s[0, i -1] + count of ')' in s[i, n])
-         * across all [1, n]
          * 
          * XOR -> prefix XOR
          * p[i] ^ p[i - 1] = XOR(i, j)
          * a ^ b = c, then
-         * a ^ c = b
+         * a ^ c = b2
+         * 
+         * some observations :
+         * - c is monotonically increasing
+         * - if ci < ci-1 => no
+         * - ci > ci-1 => bi = ci
+         * - ci = ci - 1 => bi <= ci
+         * 
+         * bi = ci at a certain point
+         * 
+         * bi = bi-1 + ai
+         * if s[i] == 1
+         * ai is fixed
+         * bi-1 = bi - ai has to be true
+         * else we return no
+         * we can only change numbers when s[i] = 0
          */
         st = new StringTokenizer(br.readLine());
         int n = Integer.parseInt(st.nextToken());
         List<Long> a = new ArrayList<>();
+        String s = br.readLine();
         st = new StringTokenizer(br.readLine());
         for (int i = 0; i < n; i++) {
             long val = Long.parseLong(st.nextToken());
             a.add(val);
         }
+        List<Long> c = new ArrayList<>();
+        st = new StringTokenizer(br.readLine());
+        for (int i = 0; i < n; i++) {
+            long val = Long.parseLong(st.nextToken());
+            c.add(val);
+        }
 
+        if (n == 1) {
+            if (s.charAt(0) == '1') {
+                if (a.getFirst().equals(c.getFirst())) {
+                    pw.println("YES");
+                    printArray(a, pw);
+                }
+                else pw.println("NO");
+            }
+            else {
+                a.set(0, c.getFirst());
+                pw.println("YES");
+                printArray(a, pw);
+            }
+            return;
+        }
+
+        for (int i = 1; i < n; i++) {
+            if (c.get(i) < c.get(i - 1)) {
+                pw.println("NO");
+                return;
+            }
+        }
+
+        if (!a.getFirst().equals(c.getFirst()) && s.charAt(0) != '0') {
+            pw.println("NO");
+            return;
+        }
+
+        boolean[] locked = new boolean[n];
+        long[] b = new long[n];
+        b[0] = c.getFirst();
+        locked[0] = true;
+
+        for (int i = 1; i < b.length; i++) {
+            if (!c.get(i).equals(c.get(i - 1))) {
+                b[i] = c.get(i);
+                locked[i] = true;
+
+                for (int j = i; j > 0; j--) {
+                    if (s.charAt(j) == '1') {
+                        long expectedPrevB = b[j] - a.get(j);
+
+                        if (locked[j - 1] && b[j - 1] != expectedPrevB) {
+                            pw.println("NO");
+                            return;
+                        }
+
+                        b[j - 1] = expectedPrevB;
+                        locked[j - 1] = true;
+                    } else
+                        break;
+                }
+            }
+        }
+
+        long inf = -1_000_000_000_000_000L;
+
+        for (int i = 1; i < b.length; i++) {
+            if (s.charAt(i) == '1') {
+                b[i] = b[i - 1] + a.get(i);
+                locked[i] = true;
+            } else if (!locked[i])
+                b[i] = inf;
+
+            a.set(i, b[i] - b[i - 1]);
+
+            if (max(c.get(i - 1), b[i]) != c.get(i)) {
+                pw.println("NO");
+                return;
+            }
+        }
+
+        a.set(0, b[0]);
+        pw.println("YES");
+        printArray(a, pw);
     }
 
     public static class SegmentTree {

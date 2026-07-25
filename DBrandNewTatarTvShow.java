@@ -4,7 +4,7 @@ import java.lang.*;
 import java.io.*;
 import static java.lang.Math.*;
 
-public class CLASS_NAME {
+public class DBrandNewTatarTvShow {
 
     // list of first 20 primes whose product > 1e18
     static long[] primes = new long[] { 1, 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71,
@@ -53,12 +53,36 @@ public class CLASS_NAME {
          */
         st = new StringTokenizer(br.readLine());
         int n = Integer.parseInt(st.nextToken());
+        int k = Integer.parseInt(st.nextToken());
         List<Long> a = new ArrayList<>();
+        int[] f = new int[n + 1];
         st = new StringTokenizer(br.readLine());
         for (int i = 0; i < n; i++) {
             long val = Long.parseLong(st.nextToken());
-            a.add(val);
+            f[(int) val]++;
         }
+
+        boolean flag = false;
+        int lastVal = -1;
+
+        for (int i = 1; i <= n; i++) {
+            int freq = f[i];
+
+            if(freq > 0) {
+                if (freq % 2 == 0) {
+                    flag = true;
+                    break;
+                }
+
+                if(lastVal != -1 && i - lastVal <= k) {
+                    flag = true;
+                    break;
+                }
+                lastVal = i;
+            }
+        }
+
+        pw.println(flag ? "YES" : "NO");
 
     }
 

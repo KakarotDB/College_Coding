@@ -4,7 +4,7 @@ import java.lang.*;
 import java.io.*;
 import static java.lang.Math.*;
 
-public class CLASS_NAME {
+public class BAnotherSortingProblem {
 
     // list of first 20 primes whose product > 1e18
     static long[] primes = new long[] { 1, 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71,
@@ -39,17 +39,39 @@ public class CLASS_NAME {
          * Thre has to be n/2 '(' and ')'
          * if '(' = + 1 and ')' = -1
          * then prefix sum >= 0 at each point
-         * To reduce the longest subequence of matched pairs of rbs 
-         * we can reduce the maximum matched pairs 
-         * now
-         * Let maximum matched pairs be M
-         * M = min (count of '(' in s[0, i -1] + count of ')' in s[i, n])
-         * across all [1, n]
          * 
          * XOR -> prefix XOR
          * p[i] ^ p[i - 1] = XOR(i, j)
          * a ^ b = c, then
-         * a ^ c = b
+         * a ^ c = b2
+         * 
+         * array ai
+         * 
+         * Operation : 
+         * - Choose k, and some subsequence of array a, and add k to each elemtn
+         * 
+         * We need to determine whether there it is possible to sort the array 
+         * we can perform operation at most once 
+         * 
+         * 8 3 9 4 10 5 11
+         * 5 6 5 6 5 6
+         * 
+         * We need ai <= ai+1
+         * 
+         * now if ai > ai+1
+         * we need to add k 
+         * now there are four cases
+         * - both get k
+         * - neither gets k 
+         * - ai gets k 
+         * - ai+1 gets k 
+         * 
+         * if ai+1 gets k then it's possible for ai <= ai+1 + k
+         * 
+         * ai <= ai+1 + k 
+         * k >= ai - ai+1
+         * k >= max(ai - ai+1)
+         * 
          */
         st = new StringTokenizer(br.readLine());
         int n = Integer.parseInt(st.nextToken());
@@ -60,6 +82,22 @@ public class CLASS_NAME {
             a.add(val);
         }
 
+        long k = 0;
+
+        for (int i = 0; i < n - 1; i++) {
+            k = max(k, a.get(i) - a.get(i + 1));
+        }
+        for (int i = 1; i < n; i++) {
+            if (a.get(i - 1) > a.get(i)) {
+                a.set(i, a.get(i) + k);
+            } 
+        }
+
+        if(isSorted(a)) {
+            pw.println("YES");
+        }
+        else pw.println("NO");
+        
     }
 
     public static class SegmentTree {

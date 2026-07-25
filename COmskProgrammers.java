@@ -4,7 +4,7 @@ import java.lang.*;
 import java.io.*;
 import static java.lang.Math.*;
 
-public class CLASS_NAME {
+public class COmskProgrammers {
 
     // list of first 20 primes whose product > 1e18
     static long[] primes = new long[] { 1, 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71,
@@ -52,14 +52,43 @@ public class CLASS_NAME {
          * a ^ c = b
          */
         st = new StringTokenizer(br.readLine());
-        int n = Integer.parseInt(st.nextToken());
-        List<Long> a = new ArrayList<>();
-        st = new StringTokenizer(br.readLine());
-        for (int i = 0; i < n; i++) {
-            long val = Long.parseLong(st.nextToken());
-            a.add(val);
+        int a = Integer.parseInt(st.nextToken());
+        int b = Integer.parseInt(st.nextToken());
+        int x = Integer.parseInt(st.nextToken());
+
+        if (a == b) {
+            pw.println(0);
+            return;
         }
 
+        List<Integer> A = new ArrayList<>();
+        List<Integer> B = new ArrayList<>();
+
+        while(true) {
+            A.add(a);
+            if (a == 0) {
+                break;
+            }
+            a/=x;
+        }
+        while(true) {
+            B.add(b);
+            if (b == 0) {
+                break;
+            }
+            b/=x;
+        }
+
+        int ans = Integer.MAX_VALUE;
+
+        for (int i = 0; i < A.size(); i++) {
+            for (int j = 0; j < B.size(); j++) {
+                int cost = i + j + abs(A.get(i) - B.get(j));
+                ans = min(cost, ans);
+            }
+        }
+
+        pw.println(ans);
     }
 
     public static class SegmentTree {

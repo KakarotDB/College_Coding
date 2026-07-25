@@ -4,7 +4,7 @@ import java.lang.*;
 import java.io.*;
 import static java.lang.Math.*;
 
-public class CLASS_NAME {
+public class CChipmunkTheoAndEquality {
 
     // list of first 20 primes whose product > 1e18
     static long[] primes = new long[] { 1, 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71,
@@ -39,26 +39,80 @@ public class CLASS_NAME {
          * Thre has to be n/2 '(' and ')'
          * if '(' = + 1 and ')' = -1
          * then prefix sum >= 0 at each point
-         * To reduce the longest subequence of matched pairs of rbs 
-         * we can reduce the maximum matched pairs 
-         * now
-         * Let maximum matched pairs be M
-         * M = min (count of '(' in s[0, i -1] + count of ')' in s[i, n])
-         * across all [1, n]
          * 
          * XOR -> prefix XOR
          * p[i] ^ p[i - 1] = XOR(i, j)
          * a ^ b = c, then
-         * a ^ c = b
+         * a ^ c = b2
+         * 
+         * 
+         * Operation 
+         * - even element -> /2
+         * - odd -> + 1
+         * 
+         * minimum operations to make all numbers equal 
+         * 
+         * 
          */
         st = new StringTokenizer(br.readLine());
         int n = Integer.parseInt(st.nextToken());
         List<Long> a = new ArrayList<>();
+        Map<Long, Integer> count1 = new HashMap<>();
+        Map<Long, Integer> count2 = new HashMap<>();
         st = new StringTokenizer(br.readLine());
         for (int i = 0; i < n; i++) {
             long val = Long.parseLong(st.nextToken());
             a.add(val);
         }
+        
+        long x = a.getFirst();
+        Set<Long> seen = new HashSet<>();
+        int steps = 0;
+        
+        //count1 stores the count 
+        //count2 stores the steps to get to the number
+        while(!seen.contains(x)) {
+           count1.put(x, count1.getOrDefault(x, 0) + 1); 
+           count2.put(x, count2.getOrDefault(x, 0) + steps);
+           seen.add(x);
+
+           if((x & 1) == 1) x++;
+           else x >>= 1;
+
+           steps++;
+        }
+
+        for (int i = 1; i < n; i++) {
+            x = a.get(i);
+            seen.clear();
+
+            steps = 0;
+
+            while(!seen.contains(x)) {
+                if(count1.containsKey(x)) {
+                    count1.put(x, count1.get(x) + 1);
+                    count2.put(x, count2.get(x) + steps);
+                }
+                seen.add(x);
+
+                if((x & 1) == 1) x++;
+                else x >>= 1;
+                steps++; 
+            }
+        }
+
+        long ans = Long.MAX_VALUE;
+
+        for(Map.Entry<Long, Integer> entry : count1.entrySet()) {
+            long target = entry.getKey();
+            int elementsReached = entry.getValue();
+
+            if(elementsReached == n) {
+                ans = min(ans, count2.get(target));
+            }
+        }
+
+        pw.println(ans);
 
     }
 

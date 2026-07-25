@@ -4,7 +4,7 @@ import java.lang.*;
 import java.io.*;
 import static java.lang.Math.*;
 
-public class CLASS_NAME {
+public class APointsOnLine {
 
     // list of first 20 primes whose product > 1e18
     static long[] primes = new long[] { 1, 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71,
@@ -16,11 +16,8 @@ public class CLASS_NAME {
     static StringTokenizer st = new StringTokenizer("");
 
     public static void main(String[] args) throws IOException {
-        int t = Integer.parseInt(br.readLine());
 
-        while (t-- > 0) {
-            solve();
-        }
+        solve(); 
 
         pw.flush();
         pw.close();
@@ -50,9 +47,18 @@ public class CLASS_NAME {
          * p[i] ^ p[i - 1] = XOR(i, j)
          * a ^ b = c, then
          * a ^ c = b
+         * 
+         * n points lying on x axis 
+         * 
+         * how many ways can we choose 
+         * three distinct points 
+         * so that distance between 
+         * two farthest points 
+         * doesn't exceed d 
          */
         st = new StringTokenizer(br.readLine());
         int n = Integer.parseInt(st.nextToken());
+        long d = Long.parseLong(st.nextToken());
         List<Long> a = new ArrayList<>();
         st = new StringTokenizer(br.readLine());
         for (int i = 0; i < n; i++) {
@@ -60,6 +66,43 @@ public class CLASS_NAME {
             a.add(val);
         }
 
+        long ans = 0;
+
+        for (int i = 0; i < n - 2; i++) {
+
+            //[x, x+d]
+            //c valid elements int he range 
+            //2 elements from c elements, considering one is fixed 
+            //number of ways to choose 2 elements = nC2 = (n * (n - 1)) / 2
+
+            //therefore if there are c elements in the range [x, x+d]
+            //number of tripletse = (c * (c - 1)) / 2 
+            long maxDistance = a.get(i) + d;
+
+            long rightIndex = upperBound(a, maxDistance);
+
+            long c = rightIndex - i - 1;
+
+            if (c >= 2) {
+                ans += (c * (c - 1)) / 2;
+            }
+        }
+
+        pw.println(ans);
+    }
+
+    public static int upperBound(List<Long> a, long target) {
+        int left = 0;
+        int right = a.size();
+
+        while(left < right) {
+            int mid = (left + right) >> 1;
+
+            if(a.get(mid) > target) right = mid;
+            else left = mid + 1;
+        }
+
+        return left;
     }
 
     public static class SegmentTree {

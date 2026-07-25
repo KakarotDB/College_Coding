@@ -4,7 +4,7 @@ import java.lang.*;
 import java.io.*;
 import static java.lang.Math.*;
 
-public class CLASS_NAME {
+public class FactoryMachines {
 
     // list of first 20 primes whose product > 1e18
     static long[] primes = new long[] { 1, 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71,
@@ -16,11 +16,7 @@ public class CLASS_NAME {
     static StringTokenizer st = new StringTokenizer("");
 
     public static void main(String[] args) throws IOException {
-        int t = Integer.parseInt(br.readLine());
-
-        while (t-- > 0) {
             solve();
-        }
 
         pw.flush();
         pw.close();
@@ -53,6 +49,7 @@ public class CLASS_NAME {
          */
         st = new StringTokenizer(br.readLine());
         int n = Integer.parseInt(st.nextToken());
+        int t = Integer.parseInt(st.nextToken());
         List<Long> a = new ArrayList<>();
         st = new StringTokenizer(br.readLine());
         for (int i = 0; i < n; i++) {
@@ -60,6 +57,32 @@ public class CLASS_NAME {
             a.add(val);
         }
 
+        long left = 1;
+        long right = 0;
+
+        for(int i = 0; i < n; i++) {
+            right = max(right, (long) a.get(i) * t);
+        }
+
+        while(left <= right) {
+            long mid = left + (right - left) / 2;
+
+            if(check(a, (long) t, mid)) right = mid - 1;
+            else left = mid + 1; 
+        }
+
+        pw.println(left);
+    }
+
+    private static boolean check(List<Long> a, long t, long mid) {
+        long products = 0;
+
+        for (int i = 0; i < a.size(); i++) {
+            products += mid/a.get(i);
+            if(products >= t) return true;
+        }
+
+        return products >= t;
     }
 
     public static class SegmentTree {
@@ -262,33 +285,31 @@ public class CLASS_NAME {
             return;
     }
 
-    public static class Pair implements Comparable<Pair> {
-        long x, y;
+    // public static class Pair implements Comparable<Pair> { long x, y;
+    //     Pair(long x, long y) {
+    //         this.x = x;
+    //         this.y = y;
+    //     }
 
-        Pair(long x, long y) {
-            this.x = x;
-            this.y = y;
-        }
+    //     @Override
+    //     public boolean equals(Object object) {
+    //         if (this == object)
+    //             return true;
+    //         if (!(object instanceof Pair pair))
+    //             return false;
+    //         return x == pair.x && y == pair.y;
+    //     }
 
-        @Override
-        public boolean equals(Object object) {
-            if (this == object)
-                return true;
-            if (!(object instanceof Pair pair))
-                return false;
-            return x == pair.x && y == pair.y;
-        }
+    //     @Override
+    //     public int hashCode() {
+    //         return Objects.hash(x, y);
+    //     }
 
-        @Override
-        public int hashCode() {
-            return Objects.hash(x, y);
-        }
-
-        @Override
-        public int compareTo(Pair other) {
-            return Long.compare(this.x, other.x);
-        }
-    }
+    //     @Override
+    //     public int compareTo(Pair other) {
+    //         return Long.compare(this.x, other.x);
+    //     }
+    // }
 
     public static boolean isPrime(int n) {
         if (n < 2)

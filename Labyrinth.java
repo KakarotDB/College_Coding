@@ -4,7 +4,7 @@ import java.lang.*;
 import java.io.*;
 import static java.lang.Math.*;
 
-public class CLASS_NAME {
+public class Labyrinth {
 
     // list of first 20 primes whose product > 1e18
     static long[] primes = new long[] { 1, 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71,
@@ -16,11 +16,7 @@ public class CLASS_NAME {
     static StringTokenizer st = new StringTokenizer("");
 
     public static void main(String[] args) throws IOException {
-        int t = Integer.parseInt(br.readLine());
-
-        while (t-- > 0) {
             solve();
-        }
 
         pw.flush();
         pw.close();
@@ -53,13 +49,97 @@ public class CLASS_NAME {
          */
         st = new StringTokenizer(br.readLine());
         int n = Integer.parseInt(st.nextToken());
-        List<Long> a = new ArrayList<>();
-        st = new StringTokenizer(br.readLine());
+        int m = Integer.parseInt(st.nextToken());
+        
+        char[][] map = new char[n][m];
+
+        int startR = 0, startC = 0;
+        int endR = 0, endC = 0;
+
         for (int i = 0; i < n; i++) {
-            long val = Long.parseLong(st.nextToken());
-            a.add(val);
+            String line = br.readLine();
+            for (int j = 0; j < m; j++) {
+                map[i][j] = line.charAt(j);
+                if(map[i][j] == 'A') {
+                    startR = i;
+                    startC = j;
+                }
+                if(map[i][j] == 'B') {
+                    endR = i;
+                    endC = j;
+                }
+            }
+        }
+        
+        int[][] dirs = {
+            {1, 0},
+            {0, 1},
+            {-1, 0},
+            {0, -1}
+        };
+
+        boolean[][] visited = new boolean[n][m];
+        char[][] moves = new char[n][m];
+
+        Queue<int[]> q = new ArrayDeque<>();
+
+        q.offer(new int[] {startR, startC});
+        visited[startR][startC] = true;
+
+        char[] dirChars = {'D', 'R', 'U', 'L'}; 
+
+        boolean found = false;
+
+        while(q.size() > 0) {
+            int[] curr = q.poll();
+            int r = curr[0];
+            int c = curr[1];
+
+            if(r == endR && c == endC) {
+                found = true;
+                break;
+            }
+
+            for (int i = 0; i < 4; i++) {
+                int nr = r + dirs[i][0];
+                int nc = c + dirs[i][1];
+
+                if(nr >= 0 && nc >= 0 && nr < n && nc < m && map[nr][nc] != '#' && !visited[nr][nc]) {
+                    visited[nr][nc] = true;
+                    moves[nr][nc] = dirChars[i];
+                    q.offer(new int[]{nr, nc});
+                }
+            }
         }
 
+        if(!found) pw.println("NO");
+        else {
+            pw.println("YES");
+
+            StringBuilder path = new StringBuilder();
+            int currR = endR;
+            int currC = endC;
+
+            while(currR != startR || currC != startC) {
+                char move = moves[currR][currC];
+                path.append(move);
+
+                if(move == 'D') currR--;
+                else if (move == 'R') {
+                    currC--;
+                }
+                else if (move == 'U') {
+                    currR++;
+                }
+                else if (move == 'L') {
+                    currC++;
+                }
+            }
+
+            pw.println(path.length());
+            pw.println(path.reverse().toString());
+
+        }
     }
 
     public static class SegmentTree {
@@ -262,82 +342,83 @@ public class CLASS_NAME {
             return;
     }
 
-    public static class Pair implements Comparable<Pair> {
-        long x, y;
-
-        Pair(long x, long y) {
-            this.x = x;
-            this.y = y;
-        }
-
-        @Override
-        public boolean equals(Object object) {
-            if (this == object)
-                return true;
-            if (!(object instanceof Pair pair))
-                return false;
-            return x == pair.x && y == pair.y;
-        }
-
-        @Override
-        public int hashCode() {
-            return Objects.hash(x, y);
-        }
-
-        @Override
-        public int compareTo(Pair other) {
-            return Long.compare(this.x, other.x);
-        }
-    }
-
-    public static boolean isPrime(int n) {
-        if (n < 2)
-            return false;
-        if (n < 4)
-            return true;
-        if ((n & 1) == 0)
-            return false;
-        for (int i = 3; i * i <= n; i++)
-            if (n % i == 0)
-                return false;
-        return true;
-    }
-
-    public static <T extends Comparable<T>> boolean isSorted(T[] array) {
-        if (array == null || array.length <= 1)
-            return true;
-
-        for (int i = 0; i < array.length - 1; i++) {
-            // compareTo returns > 0 if array[i] is greater than array[i+1]
-            if (array[i].compareTo(array[i + 1]) > 0) {
-                return false;
-            }
-        }
-        return true;
-    }
-
-    public static <T extends Comparable<T>> boolean isSorted(List<T> list) {
-        if (list == null || list.size() <= 1)
-            return true;
-
-        for (int i = 0; i < list.size() - 1; i++) {
-            if (list.get(i).compareTo(list.get(i + 1)) > 0) {
-                return false;
-            }
-        }
-        return true;
-    }
-
-    public static boolean isSorted(char[] array) {
-        if (array == null || array.length <= 1)
-            return true;
-
-        for (int i = 0; i < array.length - 1; i++) {
-            // Primitives use standard comparison operators
-            if (array[i] > array[i + 1]) {
-                return false;
-            }
-        }
-        return true;
-    }
 }
+//    public static class Pair implements Comparable<Pair> {
+//        long x, y;
+//
+//        Pair(long x, long y) {
+//            this.x = x;
+//            this.y = y;
+//        }
+//
+//        @Override
+//        public boolean equals(Object object) {
+//            if (this == object)
+//                return true;
+//            if (!(object instanceof Pair pair))
+//                return false;
+//            return x == pair.x && y == pair.y;
+//        }
+//
+//        @Override
+//        public int hashCode() {
+//            return Objects.hash(x, y);
+//        }
+//
+//        @Override
+//        public int compareTo(Pair other) {
+//            return Long.compare(this.x, other.x);
+//        }
+//    }
+//
+//    public static boolean isPrime(int n) {
+//        if (n < 2)
+//            return false;
+//        if (n < 4)
+//            return true;
+//        if ((n & 1) == 0)
+//            return false;
+//        for (int i = 3; i * i <= n; i++)
+//            if (n % i == 0)
+//                return false;
+//        return true;
+//    }
+//
+//    public static <T extends Comparable<T>> boolean isSorted(T[] array) {
+//        if (array == null || array.length <= 1)
+//            return true;
+//
+//        for (int i = 0; i < array.length - 1; i++) {
+//            // compareTo returns > 0 if array[i] is greater than array[i+1]
+//            if (array[i].compareTo(array[i + 1]) > 0) {
+//                return false;
+//            }
+//        }
+//        return true;
+//    }
+//
+//    public static <T extends Comparable<T>> boolean isSorted(List<T> list) {
+//        if (list == null || list.size() <= 1)
+//            return true;
+//
+//        for (int i = 0; i < list.size() - 1; i++) {
+//            if (list.get(i).compareTo(list.get(i + 1)) > 0) {
+//                return false;
+//            }
+//        }
+//        return true;
+//    }
+//
+//    public static boolean isSorted(char[] array) {
+//        if (array == null || array.length <= 1)
+//            return true;
+//
+//        for (int i = 0; i < array.length - 1; i++) {
+//            // Primitives use standard comparison operators
+//            if (array[i] > array[i + 1]) {
+//                return false;
+//            }
+//        }
+//        return true;
+//    }
+//}

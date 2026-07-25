@@ -4,7 +4,7 @@ import java.lang.*;
 import java.io.*;
 import static java.lang.Math.*;
 
-public class CLASS_NAME {
+public class AGamesOnTheTrain {
 
     // list of first 20 primes whose product > 1e18
     static long[] primes = new long[] { 1, 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71,
@@ -50,6 +50,17 @@ public class CLASS_NAME {
          * p[i] ^ p[i - 1] = XOR(i, j)
          * a ^ b = c, then
          * a ^ c = b
+         * 
+         * ith tower has hi cubes 
+         * 
+         * hi += xi 
+         * 
+         * make all heights equal => goal 
+         * each xi belongs to [1, k] 
+         * 
+         * Find smallest k  
+         * 
+         * binary search on answer ?? 
          */
         st = new StringTokenizer(br.readLine());
         int n = Integer.parseInt(st.nextToken());
@@ -60,6 +71,16 @@ public class CLASS_NAME {
             a.add(val);
         }
 
+        long max = 0;
+        long min = 7;
+
+
+        for(int i = 0; i < n; i++) {
+            max = max(max, a.get(i));
+            min = min(min, a.get(i));
+        }
+
+        pw.println(max - min + 1);
     }
 
     public static class SegmentTree {

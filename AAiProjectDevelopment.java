@@ -4,7 +4,7 @@ import java.lang.*;
 import java.io.*;
 import static java.lang.Math.*;
 
-public class CLASS_NAME {
+public class AAiProjectDevelopment {
 
     // list of first 20 primes whose product > 1e18
     static long[] primes = new long[] { 1, 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71,
@@ -39,27 +39,37 @@ public class CLASS_NAME {
          * Thre has to be n/2 '(' and ')'
          * if '(' = + 1 and ')' = -1
          * then prefix sum >= 0 at each point
-         * To reduce the longest subequence of matched pairs of rbs 
-         * we can reduce the maximum matched pairs 
-         * now
-         * Let maximum matched pairs be M
-         * M = min (count of '(' in s[0, i -1] + count of ')' in s[i, n])
-         * across all [1, n]
          * 
          * XOR -> prefix XOR
          * p[i] ^ p[i - 1] = XOR(i, j)
          * a ^ b = c, then
-         * a ^ c = b
+         * a ^ c = b2
+         * 
+         * n lines of code
+         * maxim -> x lines per hour  
+         * 
+         * nikita : 
+         * - y lines per hour 
+         * OR
+         * - first z hours gone. 10y lines per hour rest
+         * 
+         * so nikita has the option of either consistently going at y lines per hour 
+         * or add extra z hours (maximum completes x * z lines of code till then) and then work at 10y lines per hour
          */
         st = new StringTokenizer(br.readLine());
         int n = Integer.parseInt(st.nextToken());
-        List<Long> a = new ArrayList<>();
-        st = new StringTokenizer(br.readLine());
-        for (int i = 0; i < n; i++) {
-            long val = Long.parseLong(st.nextToken());
-            a.add(val);
-        }
+        int x = Integer.parseInt(st.nextToken());
+        int y = Integer.parseInt(st.nextToken());
+        int z = Integer.parseInt(st.nextToken()); 
 
+        //both go normally 
+        int ans1 = (n + x + y - 1) / (x + y);
+
+        n -= x * z;
+
+        int ans2 = z + (n + x + 10 * y - 1) / (x + 10*y);
+
+        pw.println(min(ans1, ans2));
     }
 
     public static class SegmentTree {

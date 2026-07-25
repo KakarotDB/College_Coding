@@ -4,12 +4,16 @@ import java.lang.*;
 import java.io.*;
 import static java.lang.Math.*;
 
-public class CLASS_NAME {
+public class EFriendlyGifts {
 
     // list of first 20 primes whose product > 1e18
     static long[] primes = new long[] { 1, 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71,
             73 };
-    static final long MOD = 0;
+    static final long MOD = (long) 1e9 + 7;
+    static int maxa = (int) 5e5 + 5;
+    static int[] spf = new int[maxa];
+    static long[] totalValue = new long[maxa];
+    static int[] seenPrimes = new int[maxa];
     // Moved to static class level
     static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     static PrintWriter pw = new PrintWriter(System.out);
@@ -18,6 +22,7 @@ public class CLASS_NAME {
     public static void main(String[] args) throws IOException {
         int t = Integer.parseInt(br.readLine());
 
+        precomputeSieve();
         while (t-- > 0) {
             solve();
         }
@@ -25,6 +30,20 @@ public class CLASS_NAME {
         pw.flush();
         pw.close();
         br.close();
+    }
+    static void precomputeSieve() {
+        for (int i = 1; i < maxa; i++) {
+            spf[i] = i;
+        }
+        for (int i = 2; i * i < maxa; i++) {
+            if (spf[i] == i) {
+                for (int j = i * i; j < maxa; j += i) {
+                    if (spf[j] == j) {
+                        spf[j] = i;
+                    }
+                }
+            }
+        }
     }
 
     public static void solve() throws IOException {
@@ -60,6 +79,38 @@ public class CLASS_NAME {
             a.add(val);
         }
 
+
+        int seenCount = 0;
+
+        for (int i = 0; i < n; i++) {
+            int val = a.get(i).intValue();
+            while(val > 1) {
+                int p = spf[(int) val];
+                int count = 0;
+
+                while(val % p == 0) {
+                    count++;
+                    val/=p;
+                }
+
+                if(totalValue[p] == 0)
+                    seenPrimes[seenCount++] = p;
+
+                totalValue[p] = (totalValue[p] + count) % MOD;
+            }
+        }
+
+        long ans = 1;
+
+        for (int i = 0; i < seenCount; i++) {
+            int p = seenPrimes[i];
+
+            ans = (ans * (1L + totalValue[p])) % MOD;
+
+            totalValue[p] = 0;
+        }
+
+        pw.println(ans);
     }
 
     public static class SegmentTree {

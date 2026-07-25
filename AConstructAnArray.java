@@ -4,7 +4,7 @@ import java.lang.*;
 import java.io.*;
 import static java.lang.Math.*;
 
-public class CLASS_NAME {
+public class AConstructAnArray {
 
     // list of first 20 primes whose product > 1e18
     static long[] primes = new long[] { 1, 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71,
@@ -39,26 +39,34 @@ public class CLASS_NAME {
          * Thre has to be n/2 '(' and ')'
          * if '(' = + 1 and ')' = -1
          * then prefix sum >= 0 at each point
-         * To reduce the longest subequence of matched pairs of rbs 
-         * we can reduce the maximum matched pairs 
-         * now
-         * Let maximum matched pairs be M
-         * M = min (count of '(' in s[0, i -1] + count of ')' in s[i, n])
-         * across all [1, n]
          * 
          * XOR -> prefix XOR
          * p[i] ^ p[i - 1] = XOR(i, j)
          * a ^ b = c, then
-         * a ^ c = b
+         * a ^ c = b2
+         * 
+         * ai = [1, 2 * n]
+         * 
+         * all elements are distinct 
+         * all adjacent sums are distinct 
+         * 
+         * i = 6
+         * 
+         * 1 2 3 4 5 6 
+         * 
+         * ai = [1, 12]
+         * 
+         * 12 11 10 9 8 7
          */
         st = new StringTokenizer(br.readLine());
         int n = Integer.parseInt(st.nextToken());
-        List<Long> a = new ArrayList<>();
-        st = new StringTokenizer(br.readLine());
-        for (int i = 0; i < n; i++) {
-            long val = Long.parseLong(st.nextToken());
-            a.add(val);
+        int j = 0;
+        for (int i = 2 * n; i >= 0; i--) {
+            pw.print((i) + " ");
+            j++;
+            if(j == n) break;
         }
+        pw.println();
 
     }
 

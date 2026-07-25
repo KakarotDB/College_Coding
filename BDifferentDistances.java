@@ -4,7 +4,7 @@ import java.lang.*;
 import java.io.*;
 import static java.lang.Math.*;
 
-public class CLASS_NAME {
+public class BDifferentDistances {
 
     // list of first 20 primes whose product > 1e18
     static long[] primes = new long[] { 1, 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71,
@@ -39,27 +39,61 @@ public class CLASS_NAME {
          * Thre has to be n/2 '(' and ')'
          * if '(' = + 1 and ')' = -1
          * then prefix sum >= 0 at each point
-         * To reduce the longest subequence of matched pairs of rbs 
-         * we can reduce the maximum matched pairs 
-         * now
-         * Let maximum matched pairs be M
-         * M = min (count of '(' in s[0, i -1] + count of ')' in s[i, n])
-         * across all [1, n]
          * 
          * XOR -> prefix XOR
          * p[i] ^ p[i - 1] = XOR(i, j)
          * a ^ b = c, then
-         * a ^ c = b
+         * a ^ c = b2
+         * 
+         * constructive 
+         * each number from 1 -> n has to appear 4 times 
+         * length 4n 
+         * 
+         * P(x, i) -> ith occurence of a number x in the array 
+         * 
+         * for each x from 1->n, the numbers 
+         * p(x, 2) - P(x, 1), P(x, 3) - p(x, 2) have to be distinct 
+         * 
+         * difference of indices of successive occurences of the number x has to be distinct 
+         * 
+         * 
          */
         st = new StringTokenizer(br.readLine());
         int n = Integer.parseInt(st.nextToken());
-        List<Long> a = new ArrayList<>();
-        st = new StringTokenizer(br.readLine());
-        for (int i = 0; i < n; i++) {
-            long val = Long.parseLong(st.nextToken());
-            a.add(val);
+
+        if (n == 2) {
+            pw.println("1 2 1 1 2 2 1 2");
+            return;
         }
 
+        List<Integer> ans = new ArrayList<>();
+
+        ans.add(1);
+        ans.add(1);
+
+        if (n % 2 == 0) {
+            for (int i = 2; i < n; i+=2) {
+                ans.add(i); ans.add(i + 1); 
+                ans.add(i); ans.add(i + 1); 
+            }
+            ans.add(n); ans.add(1);
+            ans.add(n); ans.add(1);
+        }
+        else {
+            for (int i = 2; i < n - 2; i+=2) {
+                ans.add(i); ans.add(i + 1); 
+                ans.add(i); ans.add(i + 1); 
+            }
+
+            ans.add(n - 1); ans.add(1);
+            ans.add(n - 1); ans.add(n);
+            ans.add(1); ans.add(n);
+        }
+
+        for (int i = 2; i <= n; i++) {
+            ans.add(i); ans.add(i);
+        }
+        printArray(ans, pw);
     }
 
     public static class SegmentTree {

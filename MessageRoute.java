@@ -4,7 +4,7 @@ import java.lang.*;
 import java.io.*;
 import static java.lang.Math.*;
 
-public class CLASS_NAME {
+public class MessageRoute {
 
     // list of first 20 primes whose product > 1e18
     static long[] primes = new long[] { 1, 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71,
@@ -16,11 +16,7 @@ public class CLASS_NAME {
     static StringTokenizer st = new StringTokenizer("");
 
     public static void main(String[] args) throws IOException {
-        int t = Integer.parseInt(br.readLine());
-
-        while (t-- > 0) {
             solve();
-        }
 
         pw.flush();
         pw.close();
@@ -53,13 +49,63 @@ public class CLASS_NAME {
          */
         st = new StringTokenizer(br.readLine());
         int n = Integer.parseInt(st.nextToken());
-        List<Long> a = new ArrayList<>();
-        st = new StringTokenizer(br.readLine());
-        for (int i = 0; i < n; i++) {
-            long val = Long.parseLong(st.nextToken());
-            a.add(val);
+        int m = Integer.parseInt(st.nextToken());
+
+        List<List<Integer>> adj = new ArrayList<>();
+
+        for (int i = 0; i < n + 1; i++) {
+            adj.add(new ArrayList<>());
         }
 
+        for (int i = 0; i < m; i++) {
+            st = new StringTokenizer(br.readLine());
+            int u = Integer.parseInt(st.nextToken());
+            int v = Integer.parseInt(st.nextToken());
+            adj.get(u).add(v);
+            adj.get(v).add(u);
+        }
+
+        int[] parent = new int[n + 1];
+
+        Queue<Integer> q = new ArrayDeque<>();
+
+        q.offer(1);
+        parent[1] = 1; 
+
+        boolean found = false;
+
+        while(!q.isEmpty()) {
+            int curr = q.poll();
+            if (curr == n) {
+                found = true;
+                break;
+            }
+
+            for(int neighbour : adj.get(curr)) {
+                if(parent[neighbour] == 0)  {
+                    parent[neighbour] = curr;
+                    q.add(neighbour);
+                }
+
+            }
+        }
+
+        if (!found) {
+            pw.println("IMPOSSIBLE");
+        } else {
+            List<Integer> path = new ArrayList<>();
+            int curr = n;
+
+            while(curr != 1) {
+                path.add(curr);
+                curr = parent[curr];
+            }
+            path.add(1);
+            pw.println(path.size());
+
+            Collections.reverse(path);
+            printArray(path, pw);
+        }
     }
 
     public static class SegmentTree {
@@ -262,82 +308,83 @@ public class CLASS_NAME {
             return;
     }
 
-    public static class Pair implements Comparable<Pair> {
-        long x, y;
-
-        Pair(long x, long y) {
-            this.x = x;
-            this.y = y;
-        }
-
-        @Override
-        public boolean equals(Object object) {
-            if (this == object)
-                return true;
-            if (!(object instanceof Pair pair))
-                return false;
-            return x == pair.x && y == pair.y;
-        }
-
-        @Override
-        public int hashCode() {
-            return Objects.hash(x, y);
-        }
-
-        @Override
-        public int compareTo(Pair other) {
-            return Long.compare(this.x, other.x);
-        }
-    }
-
-    public static boolean isPrime(int n) {
-        if (n < 2)
-            return false;
-        if (n < 4)
-            return true;
-        if ((n & 1) == 0)
-            return false;
-        for (int i = 3; i * i <= n; i++)
-            if (n % i == 0)
-                return false;
-        return true;
-    }
-
-    public static <T extends Comparable<T>> boolean isSorted(T[] array) {
-        if (array == null || array.length <= 1)
-            return true;
-
-        for (int i = 0; i < array.length - 1; i++) {
-            // compareTo returns > 0 if array[i] is greater than array[i+1]
-            if (array[i].compareTo(array[i + 1]) > 0) {
-                return false;
-            }
-        }
-        return true;
-    }
-
-    public static <T extends Comparable<T>> boolean isSorted(List<T> list) {
-        if (list == null || list.size() <= 1)
-            return true;
-
-        for (int i = 0; i < list.size() - 1; i++) {
-            if (list.get(i).compareTo(list.get(i + 1)) > 0) {
-                return false;
-            }
-        }
-        return true;
-    }
-
-    public static boolean isSorted(char[] array) {
-        if (array == null || array.length <= 1)
-            return true;
-
-        for (int i = 0; i < array.length - 1; i++) {
-            // Primitives use standard comparison operators
-            if (array[i] > array[i + 1]) {
-                return false;
-            }
-        }
-        return true;
-    }
 }
+//    public static class Pair implements Comparable<Pair> {
+//        long x, y;
+//
+//        Pair(long x, long y) {
+//            this.x = x;
+//            this.y = y;
+//        }
+//
+//        @Override
+//        public boolean equals(Object object) {
+//            if (this == object)
+//                return true;
+//            if (!(object instanceof Pair pair))
+//                return false;
+//            return x == pair.x && y == pair.y;
+//        }
+//
+//        @Override
+//        public int hashCode() {
+//            return Objects.hash(x, y);
+//        }
+//
+//        @Override
+//        public int compareTo(Pair other) {
+//            return Long.compare(this.x, other.x);
+//        }
+//    }
+//
+//    public static boolean isPrime(int n) {
+//        if (n < 2)
+//            return false;
+//        if (n < 4)
+//            return true;
+//        if ((n & 1) == 0)
+//            return false;
+//        for (int i = 3; i * i <= n; i++)
+//            if (n % i == 0)
+//                return false;
+//        return true;
+//    }
+//
+//    public static <T extends Comparable<T>> boolean isSorted(T[] array) {
+//        if (array == null || array.length <= 1)
+//            return true;
+//
+//        for (int i = 0; i < array.length - 1; i++) {
+//            // compareTo returns > 0 if array[i] is greater than array[i+1]
+//            if (array[i].compareTo(array[i + 1]) > 0) {
+//                return false;
+//            }
+//        }
+//        return true;
+//    }
+//
+//    public static <T extends Comparable<T>> boolean isSorted(List<T> list) {
+//        if (list == null || list.size() <= 1)
+//            return true;
+//
+//        for (int i = 0; i < list.size() - 1; i++) {
+//            if (list.get(i).compareTo(list.get(i + 1)) > 0) {
+//                return false;
+//            }
+//        }
+//        return true;
+//    }
+//
+//    public static boolean isSorted(char[] array) {
+//        if (array == null || array.length <= 1)
+//            return true;
+//
+//        for (int i = 0; i < array.length - 1; i++) {
+//            // Primitives use standard comparison operators
+//            if (array[i] > array[i + 1]) {
+//                return false;
+//            }
+//        }
+//        return true;
+//    }
+//}

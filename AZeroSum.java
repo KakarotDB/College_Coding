@@ -4,7 +4,7 @@ import java.lang.*;
 import java.io.*;
 import static java.lang.Math.*;
 
-public class CLASS_NAME {
+public class AZeroSum {
 
     // list of first 20 primes whose product > 1e18
     static long[] primes = new long[] { 1, 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71,
@@ -50,6 +50,20 @@ public class CLASS_NAME {
          * p[i] ^ p[i - 1] = XOR(i, j)
          * a ^ b = c, then
          * a ^ c = b
+         * 
+         * Basically we can change 
+         * the sign of two 
+         * adjacent elements 
+         * 
+         * We need to see if 
+         * sum of elements can be made 0 
+         * 
+         * -1 1 
+         * 
+         * changing two numbers 
+         * of the same parity 
+         * negative -> S + 4 
+         * positive -> S - 4
          */
         st = new StringTokenizer(br.readLine());
         int n = Integer.parseInt(st.nextToken());
@@ -59,6 +73,15 @@ public class CLASS_NAME {
             long val = Long.parseLong(st.nextToken());
             a.add(val);
         }
+
+        long sum = 0;
+        for (int i = 0; i < n; i++) {
+            sum += a.get(i);
+        }
+
+        if(n % 2 == 1) pw.println("NO");
+        else if(sum % 4 == 0) pw.println("YES");
+        else pw.println("NO");
 
     }
 

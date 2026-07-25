@@ -4,7 +4,7 @@ import java.lang.*;
 import java.io.*;
 import static java.lang.Math.*;
 
-public class CLASS_NAME {
+public class BTatarTvShow {
 
     // list of first 20 primes whose product > 1e18
     static long[] primes = new long[] { 1, 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71,
@@ -50,16 +50,40 @@ public class CLASS_NAME {
          * p[i] ^ p[i - 1] = XOR(i, j)
          * a ^ b = c, then
          * a ^ c = b
+         * 
+         * binary string s length n and integer k 
+         * 
+         * 
+         * arseniy -> unlimited moves -> each move : 
+         * - choose integer i [1, n - k] and invert the characters 
+         * at positions i and i + k  
+         * 
+         * can we make the entire string to 0 with this ? 
+         * 
+         * 
          */
         st = new StringTokenizer(br.readLine());
         int n = Integer.parseInt(st.nextToken());
-        List<Long> a = new ArrayList<>();
-        st = new StringTokenizer(br.readLine());
+        int k = Integer.parseInt(st.nextToken());
+
+        String s = br.readLine();
+
+        int[] counts = new int[k];
+
         for (int i = 0; i < n; i++) {
-            long val = Long.parseLong(st.nextToken());
-            a.add(val);
+            if (s.charAt(i) == '1') {
+                counts[i % k]++;
+            }
         }
 
+        for (int count : counts) {
+            if (count % 2 != 0) {
+                pw.println("NO");
+                return;
+            }
+        }
+
+        pw.println("YES");
     }
 
     public static class SegmentTree {

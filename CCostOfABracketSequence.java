@@ -4,7 +4,7 @@ import java.lang.*;
 import java.io.*;
 import static java.lang.Math.*;
 
-public class CLASS_NAME {
+public class CCostOfABracketSequence {
 
     // list of first 20 primes whose product > 1e18
     static long[] primes = new long[] { 1, 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71,
@@ -39,27 +39,77 @@ public class CLASS_NAME {
          * Thre has to be n/2 '(' and ')'
          * if '(' = + 1 and ')' = -1
          * then prefix sum >= 0 at each point
-         * To reduce the longest subequence of matched pairs of rbs 
-         * we can reduce the maximum matched pairs 
-         * now
-         * Let maximum matched pairs be M
-         * M = min (count of '(' in s[0, i -1] + count of ')' in s[i, n])
-         * across all [1, n]
          * 
          * XOR -> prefix XOR
          * p[i] ^ p[i - 1] = XOR(i, j)
          * a ^ b = c, then
-         * a ^ c = b
+         * a ^ c = b2
          */
         st = new StringTokenizer(br.readLine());
         int n = Integer.parseInt(st.nextToken());
+        int k = Integer.parseInt(st.nextToken());
         List<Long> a = new ArrayList<>();
-        st = new StringTokenizer(br.readLine());
-        for (int i = 0; i < n; i++) {
-            long val = Long.parseLong(st.nextToken());
-            a.add(val);
+
+        String s = br.readLine();
+        
+        
+        int[] A = new int[n];
+        int[] B = new int[n];
+
+        A[0] = s.charAt(0) == '(' ? 1 : 0;
+        B[n - 1] = s.charAt(n - 1) == ')' ? 1 : 0;
+        
+        for (int i = 1; i < n; i++) {
+            A[i] = A[i - 1] + (s.charAt(i) == '(' ? 1 : 0);
         }
 
+        for(int i = n - 2; i >= 0; i--) {
+            B[i] = B[i + 1] + (s.charAt(i) == ')' ? 1 : 0);
+        }
+
+        int min = Integer.MAX_VALUE; 
+        int minIdx = -1;
+
+        for (int i = 0; i <= n; i++) {
+            int sum;
+
+            if (i == 0) {
+                sum = B[0];
+            }
+            else if (i == n) {
+                sum = A[n - 1];
+            }
+            else {
+                sum = A[i - 1] + B[i];
+            }
+            if (sum < min) {
+                min = sum;
+                minIdx = i;
+            }
+        }
+        List<Integer> indices = new ArrayList<>();
+
+        for (int i = 0; i < minIdx; i++) {
+            if (s.charAt(i) == '(') {
+                indices.add(i);
+            }
+        }
+
+        for(int i = minIdx; i < n; i++) {
+            if (s.charAt(i) == ')') {
+                indices.add(i);
+            }
+        }
+
+        char[] ans = new char[n];
+
+        Arrays.fill(ans, '0');
+        int lim = min(k, min);
+        for (int i = 0; i < lim; i++) {
+            ans[indices.get(i)] = '1';
+        }
+
+        pw.println(String.valueOf(ans));
     }
 
     public static class SegmentTree {
