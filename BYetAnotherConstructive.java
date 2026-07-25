@@ -50,16 +50,40 @@ public class BYetAnotherConstructive {
          * p[i] ^ p[i - 1] = XOR(i, j)
          * a ^ b = c, then
          * a ^ c = b
+         * 
+         * n, k, m integers are given 
+         * 
+         * good array -> 
+         * minimum length of non empty subarray of a, sum % m = 0, equals k 
+         * Minimum length = k 
+         * Sum is divisible by m 
+         * it's a non empty subarray 
+         * 
+         * 
+         * 
          */
         st = new StringTokenizer(br.readLine());
         int n = Integer.parseInt(st.nextToken());
-        List<Long> a = new ArrayList<>();
-        st = new StringTokenizer(br.readLine());
-        for (int i = 0; i < n; i++) {
-            long val = Long.parseLong(st.nextToken());
-            a.add(val);
-        }
+        int k = Integer.parseInt(st.nextToken());
+        int m = Integer.parseInt(st.nextToken());
 
+        if (k > m) {
+            pw.println("NO");
+            return;
+        }
+        pw.println("YES");
+
+        long[] a = new long[n];
+
+        long val = m - k + 1;
+
+        for (int i = 0; i < a.length; i++) {
+            if (i % k == k - 1) {
+                a[i] = val;
+            }            
+            else a[i] = 1;
+        }
+        printArray(a, pw);
     }
 
     public static class SegmentTree {

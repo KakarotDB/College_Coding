@@ -4,7 +4,7 @@ import java.lang.*;
 import java.io.*;
 import static java.lang.Math.*;
 
-public class CLASS_NAME {
+public class CInversionOfASubsequence {
 
     // list of first 20 primes whose product > 1e18
     static long[] primes = new long[] { 1, 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71,
@@ -55,15 +55,63 @@ public class CLASS_NAME {
          * - What is the easiest way to satisfy the main constraint ? 
          * - How can I make the rest of the array/requirements neutral or safe ? 
          * - What happens when the constraints clash? 
+         * 
+         * 
+         * 
          */
         st = new StringTokenizer(br.readLine());
         int n = Integer.parseInt(st.nextToken());
         List<Long> a = new ArrayList<>();
+        int onecount = 0;
         st = new StringTokenizer(br.readLine());
         for (int i = 0; i < n; i++) {
             long val = Long.parseLong(st.nextToken());
             a.add(val);
+            if (val == 1) {
+                onecount++;
+            }
         }
+        int bonecount = 0;
+        List<Long> b = new ArrayList<>();
+        st = new StringTokenizer(br.readLine());
+        for (int i = 0; i < n; i++) {
+            long val = Long.parseLong(st.nextToken());
+            b.add(val);
+
+            if(val == 1) bonecount++;
+        }
+
+        if (a.equals(b)) {
+            pw.println(0);
+            return;
+        }
+
+        if (onecount == 0) {
+            pw.println(-1);
+            return;
+        }
+
+        if(bonecount == n) {
+            pw.println(-1);
+            return;
+        }
+        onecount = 0;
+        int mismatch = 0;
+
+        for (int i = 0; i < n; i++) {
+            if (!a.get(i).equals(b.get(i))) {
+                mismatch++;
+                if (a.get(i) == 1) {
+                    onecount++;
+                } 
+            }
+        }
+
+        if (onecount % 2 == 1) {
+            pw.println(1);
+        }
+        else pw.println(2);
+            
 
     }
 
